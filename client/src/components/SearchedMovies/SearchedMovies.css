@@ -1,0 +1,26 @@
+.cat,
+.err {
+  padding-top: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.err {
+  letter-spacing: 1px;
+}
+
+.whiteColorSearch {
+  color: #fff;
+}
+
+.blackColorSearch {
+  color: rgb(13, 37, 63);
+}
+
+@media only screen and (max-width: 640px) {
+  .cat {
+    padding-top: 8.5rem;
+  }
+}

@@ -1,0 +1,81 @@
+.cate {
+  padding-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+}
+
+.cate span {
+  background: tomato;
+  color: white;
+  padding: 0.5rem 0.5rem;
+  border-radius: 50px;
+}
+
+.cate span span {
+  margin-left: 0.5rem;
+  background: #fff;
+  color: tomato;
+  border-radius: 100%;
+  padding: 0 0.3rem;
+}
+
+.all {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.blackMovies {
+  background: rgb(13, 37, 63);
+}
+
+.whiteMovies {
+  background: rgb(255, 255, 255);
+}
+
+.error {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background: rgb(221, 221, 221);
+  color: red;
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  padding: 5rem 0rem 1rem;
+}
+
+.categoryColor {
+  color: rgb(240, 244, 248);
+}
+
+@media screen and (max-width: 786px) {
+  .all .one-movie {
+    width: 150px;
+    margin: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .cate {
+    padding-top: 3.5rem;
+  }
+
+  .cate span {
+    padding: 0.3rem 0.4rem;
+    font-size: 0.7rem;
+  }
+
+  .all {
+    width: 100vw;
+  }
+
+  .all .one-movie {
+    margin: 0.5rem;
+  }
+}

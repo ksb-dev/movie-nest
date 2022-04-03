@@ -1,0 +1,119 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main a {
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.main a h3 {
+  font-weight: 500;
+}
+
+.main .title h1 {
+  background: linear-gradient(to right, #90cea1, #01b4e4);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  margin-right: 2rem;
+}
+
+.main .signup-form h2 {
+  background: linear-gradient(to right, #90cea1, #01b4e4);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.main .signup-form label span {
+  background: linear-gradient(to right, #90cea1, #01b4e4);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.main .signup-form {
+  width: 400px;
+  max-width: 400px;
+  padding: 2rem;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border-radius: 3px;
+  border-top: 5px solid #90cea1;
+}
+
+.main .signup-form label {
+  display: block;
+  margin: 30px auto;
+}
+
+.main .signup-form label .eye {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main .signup-form span {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.main .signup-form input {
+  padding: 8px 6px;
+  font-size: 1em;
+  color: rgb(13, 37, 63);
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+}
+
+.main .signup-form label .eye i {
+  cursor: pointer;
+}
+
+.main .signup-form input:focus {
+  outline: none;
+}
+
+.main .signup-form h4 {
+  margin-top: 1rem;
+  font-weight: 300;
+  line-height: 20px;
+}
+
+.main .signup-form .btn {
+  background: transparent;
+  border: 2px solid #90cea1;
+  background: linear-gradient(to right, #90cea1, #01b4e4);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  margin-right: 1rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 640px) {
+  .main .signup-form {
+    width: 350px;
+    max-width: 350px;
+  }
+}

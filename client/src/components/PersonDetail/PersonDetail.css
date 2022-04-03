@@ -1,0 +1,126 @@
+.full-detail {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  transform: translateX(-120%);
+  transition: transform 0.3s ease;
+  overflow: auto;
+}
+
+.full-detail .person-detail .close-detail i {
+  cursor: pointer;
+}
+
+.full-detail .person-detail .close-detail i:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.full-detail .person-detail {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 2rem;
+  border-radius: 3px;
+  box-shadow: 5px 5px 20px #000;
+  min-height: 100vh;
+}
+
+.full-detail .person-detail .person-image-birth {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 2rem;
+}
+
+.full-detail .person-detail .person-image-birth .img {
+  width: 250px;
+  margin: 0 1rem 1rem 1rem;
+  border-radius: 3px;
+  box-shadow: 1px 1px 5px #000;
+}
+
+.full-detail .person-detail .person-image-birth .birth {
+  margin-left: 1rem;
+  letter-spacing: 1px;
+}
+
+.full-detail .person-detail .person-image-birth .birth h5 {
+  font-size: 1rem;
+}
+
+.full-detail .person-detail .person-image-birth .birth h5 span {
+  font-weight: 500;
+}
+
+.full-detail .person-detail .bio h4 {
+  line-height: 2rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 900px) {
+  .full-detail .person-detail {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .full-detail .person-detail .bio h4 {
+    margin: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.6rem;
+  }
+
+  .full-detail .person-detail .person-image-birth .birth h3 {
+    font-size: 1.2rem;
+  }
+
+  .full-detail .person-detail .person-image-birth .birth h5 {
+    font-size: 0.8rem;
+  }
+
+  .full-detail .person-detail .person-image-birth .birth h5 span {
+    font-size: 0.8rem;
+  }
+
+  .full-detail .person-detail .bio h4 {
+    font-size: 0.8rem;
+  }
+}
+
+.personBlackAlpha {
+  background: rgb(13, 37, 63, 0.9);
+}
+
+.personWhiteAlpha {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.personBlackBackground {
+  background: rgb(13, 37, 63);
+}
+
+.personWhiteBackground {
+  background: rgb(255, 255, 255);
+}
+
+.blackColor {
+  color: rgb(13, 37, 63);
+}
+
+.whiteColor {
+  color: rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 640px) {
+  .full-detail .person-detail {
+    margin: 0rem;
+  }
+
+  .full-detail .person-detail .person-image-birth .img {
+    width: 200px;
+  }
+}

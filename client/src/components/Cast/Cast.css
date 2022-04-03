@@ -1,0 +1,136 @@
+.cast-div {
+  margin: 0;
+  margin-bottom: 2.9rem;
+  padding: 2rem;
+}
+
+.cast-div h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.cast-div .section-center {
+  display: flex;
+  align-items: center;
+  overflow: auto;
+  letter-spacing: 1px;
+  padding: 1rem;
+  padding-left: 0rem;
+  border-radius: 3px;
+  margin-left: -0.5rem;
+}
+
+.cast-div .section-center .actor-img-name {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 0.5rem;
+}
+
+.cast-div .section-center .actor-img-name .person-img {
+  height: 350px;
+  object-fit: cover;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 1px 1px 5px #000;
+}
+
+.cast-div .section-center .actor-img-name .person-img:hover {
+  box-shadow: 2px 2px 10px #000;
+  transition: box-shadow 0.3s ease;
+}
+
+.cast-div .section-center .actor-img-name .character-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 0 0 3px 3px;
+  letter-spacing: 2px;
+}
+
+.cast-div .section-center .actor-img-name .character-name h6 {
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 1280px) {
+  .cast-div {
+    width: 100vw;
+    padding: 1rem 4rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .cast-div .section-center .actor-img-name .person-img {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .cast-div {
+    padding-left: 2rem;
+  }
+
+  .cast-div h3 {
+    font-size: 1rem;
+  }
+
+  .cast-div .section-center .actor-img-name .person-img {
+    height: 250px;
+  }
+
+  .cast-div .section-center .actor-img-name .character-name h6 {
+    font-size: 0.5rem;
+    font-weight: 400;
+  }
+  .cast-div .section-center .actor-img-name .character-name h5 {
+    font-size: 0.6rem;
+    font-weight: 500;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .cast-div {
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cast-div h3 {
+    font-size: 1rem;
+    margin-left: 3rem;
+  }
+
+  .cast-div .section-center {
+    width: 90vw;
+    margin: 0 auto;
+  }
+
+  .cast-div .section-center .actor-img-name {
+    margin: 0.2rem;
+  }
+
+  .cast-div .section-center .actor-img-name .person-img {
+    height: 200px;
+  }
+
+  .cast-div .section-center .actor-img-name .character-name h6 {
+    font-size: 0.5rem;
+    font-weight: 300;
+  }
+  .cast-div .section-center .actor-img-name .character-name h5 {
+    font-size: 0.6rem;
+    font-weight: 400;
+  }
+}

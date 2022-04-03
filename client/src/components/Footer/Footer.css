@@ -1,0 +1,54 @@
+.footer {
+  width: 100vw;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  padding: 0.2rem;
+}
+
+.footer .name {
+  margin: 0;
+  padding: 0.2rem;
+  letter-spacing: 1px;
+  background: linear-gradient(to right, #90cea1, #01b4e4);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}
+
+.footerWhiteBackground {
+  background: rgb(13, 37, 63);
+}
+
+.footerBlackBackground {
+  background: #fff;
+}
+
+.footerBlackColor {
+  color: rgb(13, 37, 63);
+}
+
+.footerWhiteColor {
+  color: #fff;
+}
+
+@media only screen and (max-width: 640px) {
+  .footer {
+    display: flex;
+  }
+
+  .footer .name {
+    letter-spacing: 5px;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+  }
+
+  .footer a button {
+    font-size: 0.8rem;
+  }
+}

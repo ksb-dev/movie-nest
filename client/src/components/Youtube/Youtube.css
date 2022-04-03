@@ -1,0 +1,87 @@
+.youtube-div {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 3;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2rem;
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
+}
+
+.youtube-div .close-btn {
+  background: transparent;
+  border: none;
+}
+
+.youtube-div .close-btn:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.youtube-div .close-btn .fa-solid {
+  margin-bottom: 1rem;
+  cursor: pointer;
+  border-radius: 100%;
+  border: none;
+}
+
+.youtube-div .trailer-not-found {
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+}
+
+@media screen and (max-width: 1280px) {
+  .youtube-div .youtube {
+    width: 900px;
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .youtube-div .youtube {
+    width: 700px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .youtube-div .youtube {
+    width: 500px;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .youtube-div .trailer-not-found {
+    font-size: 1rem;
+  }
+
+  .youtube-div .youtube {
+    width: 300px;
+    height: 200px;
+  }
+}
+
+.blackBackground {
+  background: rgb(13, 37, 63);
+}
+
+.whiteBackground {
+  background: rgb(255, 255, 255);
+}
+
+.blackColor {
+  color: rgb(13, 37, 63);
+}
+
+.whiteColor {
+  color: #fff;
+}

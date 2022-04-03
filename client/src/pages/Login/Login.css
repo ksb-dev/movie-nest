@@ -1,0 +1,124 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgb(13, 37, 63);
+}
+
+.main .title h1 {
+  background: linear-gradient(to right, #90cea1, #01b4e4);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+}
+
+.main .login-form {
+  width: 400px;
+  max-width: 400px;
+  padding: 2rem;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  border-top: 5px solid #90cea1;
+}
+
+.main .login-form h2 {
+  background: linear-gradient(to right, #90cea1, #01b4e4);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.main .login-form label span {
+  background: linear-gradient(to right, #90cea1, #01b4e4);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.main .login-form label {
+  display: block;
+  margin: 30px auto;
+}
+
+.main .login-form label .eye {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main .login-form span {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.main .login-form input {
+  padding: 8px 6px;
+  font-size: 1em;
+  color: rgb(13, 37, 63);
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+}
+
+.main .login-form input:focus {
+  outline: none;
+}
+
+.main .login-form label .eye i {
+  cursor: pointer;
+  color: #fff;
+}
+
+.main h5 {
+  margin-top: 1rem;
+  text-transform: none;
+  background: linear-gradient(to right, #90cea1, #01b4e4);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.main h5 a {
+  background: linear-gradient(to right, #90cea1, #01b4e4);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-radius: 3px;
+  padding: 0.1rem 0.3rem;
+}
+
+.main .login-form a {
+  cursor: pointer;
+}
+
+.main .login-form h4 {
+  margin-top: 1rem;
+  font-weight: 300;
+  line-height: 20px;
+}
+
+.main .login-form .btn {
+  background: transparent;
+  border: 2px solid #90cea1;
+  background: linear-gradient(to right, #90cea1, #01b4e4);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  margin-right: 1rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 640px) {
+  .main .login-form {
+    width: 350px;
+    max-width: 400px;
+  }
+}

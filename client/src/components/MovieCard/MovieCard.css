@@ -1,0 +1,171 @@
+.one-movie {
+  overflow: hidden;
+  border-radius: 3px;
+  width: 250px;
+  margin: 1rem;
+}
+
+.one-movie:hover {
+  box-shadow: 2px 2px 10px;
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
+}
+
+.one-movie .img-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.one-movie .img-rating {
+  position: relative;
+}
+
+.one-movie .img-rating img {
+  width: 232px;
+  display: block;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.one-movie .img-rating span {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  color: #fff;
+  padding: 0rem 0.3rem;
+  margin: 0.7rem;
+  width: 40px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.one-movie .movie-info {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  letter-spacing: 1px;
+}
+
+.one-movie .movie-info .title-year {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.one-movie .movie-info .title-year .year {
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-left: 1rem;
+}
+
+.one-movie .movie-info .rating-bookmark {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0.5rem;
+}
+
+.one-movie .movie-info .rating-bookmark #add {
+  color: #fff;
+  background: rgb(87, 163, 0);
+  padding: 5px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  border-radius: 3px;
+}
+
+.one-movie .movie-info .rating-bookmark #add:hover {
+  background: rgb(147, 218, 67);
+  transition: color 0.3s ease;
+}
+
+.one-movie .movie-info .rating-bookmark #add i {
+  margin-right: 0.5rem;
+}
+
+.one-movie .movie-info .rating-bookmark #remove {
+  color: #fff;
+  background: red;
+  padding: 5px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  border-radius: 3px;
+}
+
+.one-movie .movie-info .rating-bookmark #remove:hover {
+  background: rgb(255, 79, 79);
+  transition: color 0.3s ease;
+}
+
+.one-movie .movie-info .rating-bookmark #remove i {
+  margin-right: 0.5rem;
+}
+
+.green {
+  background: green;
+}
+
+.orange {
+  background: orange;
+}
+
+.red {
+  background: tomato;
+}
+
+@media screen and (max-width: 786px) {
+  .one-movie {
+    width: 150px;
+  }
+
+  .one-movie .img-rating span {
+    font-size: 0.7rem;
+    padding: 0.1rem;
+    width: 30px;
+  }
+
+  .one-movie .img-rating img {
+    width: 138px;
+  }
+
+  .one-movie .movie-info h5 {
+    font-size: 0.6rem;
+  }
+}
+
+.movieInfoWhiteBg {
+  background: #001124;
+}
+
+.movieInfoBlackBg {
+  background: rgb(220, 220, 220);
+}
+
+.darkTitle {
+  color: rgb(13, 37, 63);
+}
+
+.lightTitle {
+  color: #fff;
+}
+
+.darkBg {
+  background: rgb(13, 37, 63);
+}
+
+.lightBg {
+  background: #fff;
+}

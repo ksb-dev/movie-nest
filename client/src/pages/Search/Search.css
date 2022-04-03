@@ -1,0 +1,99 @@
+.search {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  top: 2.9rem;
+  left: 0;
+  z-index: 1;
+  width: 100vw;
+}
+
+.search label {
+  letter-spacing: 1px;
+  margin-top: 1rem;
+}
+
+.search form {
+  border-radius: 3px;
+  margin: 0.5rem;
+}
+
+.search form input {
+  padding: 0.5rem 1rem;
+  text-align: center;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  letter-spacing: var(--spacing);
+  width: 500px;
+}
+
+.search form .form-input:focus {
+  outline: none;
+}
+
+.search form .form-input::placeholder {
+  font-family: 'Montserrat', sans-serif;
+  padding-left: 0.2rem;
+}
+
+.search form .form-input:focus::placeholder {
+  color: transparent;
+}
+
+.search .mode-home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search p {
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.search p i {
+  font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 640px) {
+  .search {
+    top: 2.5rem;
+  }
+
+  .search form {
+    margin: 0.5rem;
+  }
+
+  .search form input {
+    padding: 0.5rem 0.5rem;
+    width: 90vw;
+  }
+
+  ::placeholder {
+    font-size: 0.7rem;
+  }
+
+  .search p i {
+    font-size: 1rem;
+  }
+}
+
+.darkSearch {
+  background: rgb(13, 37, 63);
+}
+
+.lightSearch {
+  background: #fff;
+}
+
+.darkColorSearch {
+  color: rgb(13, 37, 63);
+}
+
+.lightColorSearch {
+  color: #fff;
+}

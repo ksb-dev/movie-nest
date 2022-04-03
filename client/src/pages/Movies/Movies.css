@@ -1,0 +1,95 @@
+.category {
+  padding-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.more {
+  padding-bottom: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.more button {
+  border: none;
+  outline: none;
+  background: orange;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.more button:hover {
+  transform: scaleX(1.1);
+  transition: all 0.3s ease;
+}
+
+.all {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  border-radius: 3px;
+  padding-bottom: 3rem;
+}
+
+.blackMovies {
+  background: rgb(120, 120, 120);
+}
+
+.whiteMovies {
+  background: #fff;
+}
+
+.blackColorCategory {
+  color: rgb(13, 37, 63);
+}
+
+.whiteColorCategory {
+  color: rgb(240, 244, 248);
+}
+
+.error {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background: rgb(221, 221, 221);
+  color: red;
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  padding: 5rem 0rem 1rem;
+}
+
+.categoryColor {
+  color: rgb(240, 244, 248);
+}
+
+@media screen and (max-width: 786px) {
+  .all .one-movie {
+    width: 150px;
+    margin: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .category {
+    padding-top: 3.5rem;
+  }
+
+  .all {
+    width: 100vw;
+  }
+
+  .all .one-movie {
+    margin: 0.5rem;
+  }
+}

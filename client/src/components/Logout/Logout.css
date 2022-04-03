@@ -1,0 +1,43 @@
+.logout {
+  position: fixed;
+  top: 3rem;
+  right: 0;
+  z-index: 2;
+  margin: 0 auto;
+  padding: 1rem;
+  transform: translateX(100%);
+  border-radius: 3px;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease;
+}
+
+.logout h4 {
+  text-transform: none;
+}
+
+.logout .options {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logout .options h5 {
+  cursor: pointer;
+}
+
+.dark {
+  background: #0d253f;
+  color: #fff;
+}
+
+.light {
+  background: #fff;
+  color: #0d253f;
+}
+
+@media screen and (max-width: 640px) {
+  .logout {
+    top: unset;
+    bottom: 3rem;
+  }
+}

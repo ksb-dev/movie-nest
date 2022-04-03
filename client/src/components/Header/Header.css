@@ -1,0 +1,239 @@
+.backMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  width: 100vw;
+  height: 100vh;
+  background: grey;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.backMenu .all-menu p:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+.all-menu {
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.backMenu .all-menu .all-menu-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  margin: 0;
+}
+
+.backMenu .all-menu .all-menu-list li:first-child {
+  margin-top: 2rem;
+}
+
+.backMenu .all-menu .all-menu-list li {
+  margin: 1rem 2rem;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.backMenu .all-menu .all-menu-list li:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+.backMenu .all-menu .all-menu-list li.bookmarks a {
+  background: tomato;
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 50px;
+}
+
+.header {
+  width: 100vw;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .name-mode-menu {
+  width: 100vw;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.header .name-mode-menu h4 {
+  margin: 0;
+  padding: 0.2rem;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  background: linear-gradient(to right, #90cea1, #01b4e4);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.header .name-mode-menu a button {
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  background: transparent;
+}
+
+.header .name-mode-menu a button i {
+  margin-right: 0.5rem;
+}
+
+.header .name-mode-menu .mode-menu {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .name-mode-menu .mode-menu p {
+  margin: 0;
+  cursor: pointer;
+  padding: 0;
+  text-align: center;
+  margin: 0 1rem;
+  letter-spacing: 1px;
+}
+
+.header .name-mode-menu .mode-menu p:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.header .name-mode-menu .mode-menu .menu {
+  border: none;
+}
+
+.header .name-mode-menu .mode-menu p i {
+  padding-right: 0.3rem;
+}
+
+.backBlackBackground {
+  background: rgba(13, 37, 63, 0.9);
+}
+
+.backWhiteBackground {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.menuBlackBackground {
+  background: rgb(13, 37, 63);
+}
+
+.menuWhiteBackground {
+  background: rgb(255, 255, 255);
+}
+
+.headerWhiteBg {
+  background: rgb(255, 255, 255);
+}
+
+.headerBlackBg {
+  background: rgb(13, 37, 63);
+}
+
+.headerBlackColor {
+  color: rgb(13, 37, 63);
+}
+
+.headerWhiteColor {
+  color: #fff;
+}
+
+@media only screen and (max-width: 786px) {
+}
+
+@media only screen and (max-width: 640px) {
+  .all-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 200px;
+  }
+
+  .backMenu .all-menu .all-menu-list {
+    padding: 0;
+  }
+
+  .backMenu .all-menu .all-menu-list li:last-child {
+    margin-bottom: 5rem;
+  }
+
+  .backMenu .all-menu .all-menu-list li {
+    margin: 1rem;
+    font-weight: unset;
+  }
+
+  .header {
+    position: fixed;
+    top: unset;
+    bottom: 0;
+    left: 0;
+    min-height: 46.4px;
+  }
+
+  .header .name-mode-menu .mode-menu {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header .name-mode-menu h4 {
+    display: none;
+  }
+
+  .header .name-mode-menu .mode-menu {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .header .name-mode-menu .mode-menu p {
+    font-size: 0.8rem;
+    padding: 0rem;
+    margin-left: 0rem;
+    font-weight: unset;
+  }
+
+  .header .name-mode-menu .mode-menu p i {
+    font-size: 0.8rem;
+    padding: 0;
+    margin-right: 0.2rem;
+  }
+}
