@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 // Context
 import { useGlobalContext } from '../../context/context'
@@ -13,7 +13,20 @@ import './Search.css'
 const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&query="`
 
 const Search = () => {
-  const { query, setQuery, searchMovies, toggleMode } = useGlobalContext()
+  const {
+    searchMovies,
+    toggleMode,
+    searchedMovies,
+    setSearchedMovies,
+    isLoading
+  } = useGlobalContext()
+  const [query, setQuery] = useState(localStorage.getItem('term'))
+
+  useEffect(() => {
+    if (isLoading) searchMovies(SEARCH_API + query, query)
+
+    if (!query) setSearchedMovies([])
+  }, [isLoading])
 
   useEffect(() => {
     window.scroll({
@@ -21,7 +34,7 @@ const Search = () => {
       left: 0,
       behavior: 'smooth'
     })
-  }, [])
+  })
 
   return (
     <>
@@ -48,7 +61,7 @@ const Search = () => {
           }
           onSubmit={e => {
             e.preventDefault()
-            setQuery('')
+            localStorage.setItem('term', query)
             searchMovies(SEARCH_API + query, query)
           }}
           id='input'

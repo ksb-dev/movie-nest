@@ -138,9 +138,7 @@ const Movie = () => {
 
           <h6
             className={toggleMode === 'white' ? 'hrlineBlack' : 'hrlineWhite'}
-          >
-            .
-          </h6>
+          ></h6>
 
           {/* Overview */}
 
@@ -159,9 +157,7 @@ const Movie = () => {
 
           <h6
             className={toggleMode === 'white' ? 'hrlineBlack' : 'hrlineWhite'}
-          >
-            .
-          </h6>
+          ></h6>
 
           {/* Cast */}
 

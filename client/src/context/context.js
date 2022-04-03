@@ -3,6 +3,8 @@ import axios from 'axios'
 
 const AppContext = React.createContext()
 
+const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&query="`
+
 const POPULAR = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&sort_by=popularity.desc`
 const TRENDING = `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_MOVIE_API_KEY}`
 const NOW_PLAYING = `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US`
@@ -13,7 +15,6 @@ const AppProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState({ show: false, msg: '' })
   const [movies, setMovies] = useState([])
-  const [query, setQuery] = useState('')
   const [toggleMode, setToggleMode] = useState('white')
   const [category, setCategory] = useState('')
   const [searchedMovies, setSearchedMovies] = useState([])
@@ -152,8 +153,6 @@ const AppProvider = ({ children }) => {
         setIsLoading,
         movies,
         searchMovies,
-        query,
-        setQuery,
         error,
         setError,
         toggleMode,
