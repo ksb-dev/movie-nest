@@ -14,20 +14,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 .logout .box {
   padding: 2rem;
   border-radius: 3px;
+  margin-top: -1rem;
 }
 
 .logout .box h4 {
   text-transform: none;
+  text-align: center;
 }
 
 .logout .box .options {
-  margin-top: 2rem;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
