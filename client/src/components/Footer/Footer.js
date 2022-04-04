@@ -16,7 +16,7 @@ const Footer = () => {
           : 'footer footerBlackBackground footerBlackColor'
       }
     >
-      <h1 className='name'>MovieHub</h1>
+      <h1 className='name'>Moviefy</h1>
     </div>
   )
 }

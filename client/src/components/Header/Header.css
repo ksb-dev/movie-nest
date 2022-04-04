@@ -86,7 +86,6 @@
   background: linear-gradient(to right, #90cea1, #01b4e4);
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  border-radius: 3px;
   cursor: pointer;
 }
 
