@@ -94,10 +94,7 @@ const Header = () => {
             }
           >
             <li>
-              <i
-                className='fa-solid fa-circle-xmark fa-2x'
-                onClick={hideMenu}
-              ></i>
+              <i className='fa-solid fa-xmark fa-2x' onClick={hideMenu}></i>
             </li>
             <li className='bookmarks' onClick={hideMenu}>
               <Link to='/bookmarks'>Wishlist</Link>
@@ -121,7 +118,7 @@ const Header = () => {
         }
       >
         <div className='name-mode-menu'>
-          <h4 onClick={() => handleClick('popular')}>MovieHub</h4>
+          <h4 onClick={() => handleClick('popular')}>Moviefy</h4>
 
           <div className='mode-menu'>
             <p>
@@ -224,8 +221,8 @@ const Header = () => {
               <i
                 className={
                   toggleMode === 'white'
-                    ? 'fa fa-bars headerWhiteColor'
-                    : 'fa fa-bars headerBlackColor'
+                    ? 'fa fa-bars-staggered headerWhiteColor'
+                    : 'fa fa-bars-staggered headerBlackColor'
                 }
               ></i>
             </p>

@@ -50,7 +50,7 @@ export default function Login () {
         </h4>
       </Link>
       <div className='title'>
-        <h1>MovieHub</h1>
+        <h1>Moviefy</h1>
       </div>
 
       <form onSubmit={handleSubmit} className='login-form'>

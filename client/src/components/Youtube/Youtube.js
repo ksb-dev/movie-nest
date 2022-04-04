@@ -48,7 +48,7 @@ const Youtube = ({ youtube_div, off, trailerUrl, setTrailerUrl }) => {
             ref={off}
             onClick={() => close()}
           >
-            <i className='fa-solid fa-circle-xmark fa-3x'></i>
+            <i className='fa-solid fa-xmark fa-3x'></i>
           </div>
 
           <YouTube className='youtube' videoId={trailerUrl} opts={opts} />
