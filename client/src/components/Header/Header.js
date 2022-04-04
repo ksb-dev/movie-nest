@@ -57,6 +57,7 @@ const Header = () => {
   }
 
   const handleClick = category => {
+    localStorage.setItem('category', category)
     setPage(2)
 
     navigate('/')
@@ -101,9 +102,9 @@ const Header = () => {
             </li>
             <li onClick={() => handleClick('popular')}>Popular</li>
             <li onClick={() => handleClick('trending')}>Trending</li>
-            <li onClick={() => handleClick('now_playing')}>Now Playing</li>
+            <li onClick={() => handleClick('now playing')}>Now Playing</li>
             <li onClick={() => handleClick('upcoming')}>Upcoming</li>
-            <li onClick={() => handleClick('top_rated')}>Top Rated</li>
+            <li onClick={() => handleClick('top rated')}>Top Rated</li>
           </ul>
         </div>
       </div>

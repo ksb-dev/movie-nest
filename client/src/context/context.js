@@ -3,8 +3,6 @@ import axios from 'axios'
 
 const AppContext = React.createContext()
 
-const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&query="`
-
 const POPULAR = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&sort_by=popularity.desc`
 const TRENDING = `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_MOVIE_API_KEY}`
 const NOW_PLAYING = `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US`
@@ -99,6 +97,8 @@ const AppProvider = ({ children }) => {
   }
 
   const fetchMovies = async (url, category, page) => {
+    localStorage.setItem('category', category)
+
     if (page === 1) {
       window.scroll({
         top: 0,
@@ -135,13 +135,19 @@ const AppProvider = ({ children }) => {
   const loadMovies = (category, page) => {
     if (category === 'popular') fetchMovies(POPULAR, category, page)
     if (category === 'trending') fetchMovies(TRENDING, category, page)
-    if (category === 'now_playing') fetchMovies(NOW_PLAYING, category, page)
+    if (category === 'now playing') fetchMovies(NOW_PLAYING, category, page)
     if (category === 'upcoming') fetchMovies(UPCOMING, category, page)
-    if (category === 'top_rated') fetchMovies(TOP_RATED, category, page)
+    if (category === 'top rated') fetchMovies(TOP_RATED, category, page)
   }
 
   useEffect(() => {
-    loadMovies('popular', 1)
+    const category = localStorage.getItem('category')
+
+    if (category) {
+      loadMovies(category, 1)
+    } else {
+      loadMovies('popular', 1)
+    }
   }, [])
 
   return (

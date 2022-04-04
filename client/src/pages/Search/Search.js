@@ -13,13 +13,7 @@ import './Search.css'
 const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&query="`
 
 const Search = () => {
-  const {
-    searchMovies,
-    toggleMode,
-    setSearchedMovies,
-    isLoading,
-    user
-  } = useGlobalContext()
+  const { searchMovies, toggleMode, isLoading } = useGlobalContext()
   const [query, setQuery] = useState('')
 
   useEffect(() => {

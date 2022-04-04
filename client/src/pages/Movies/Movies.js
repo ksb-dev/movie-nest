@@ -37,10 +37,10 @@ const Movies = () => {
 
     if (category === 'popular') fetchMovies(POPULAR, 'popular', page)
     if (category === 'trending') fetchMovies(TRENDING, 'trending', page)
-    if (category === 'now_playing')
-      fetchMovies(NOW_PLAYING, 'now_playing', page)
+    if (category === 'now playing')
+      fetchMovies(NOW_PLAYING, 'now playing', page)
     if (category === 'upcoming') fetchMovies(UPCOMING, 'upcoming', page)
-    if (category === 'top rated') fetchMovies(TOP_RATED, 'top_rated', page)
+    if (category === 'top rated') fetchMovies(TOP_RATED, 'top rated', page)
   }
 
   return (

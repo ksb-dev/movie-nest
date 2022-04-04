@@ -28,8 +28,10 @@ export default function Login () {
     if (user) {
       navigate('/')
       localStorage.removeItem('term')
+      localStorage.setItem('category', 'popular')
       setSearchedMovies([])
       setSearchTerm('')
+      window.location.reload()
     }
   }, [user, navigate])
 
