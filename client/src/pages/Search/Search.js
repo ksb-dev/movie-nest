@@ -16,16 +16,15 @@ const Search = () => {
   const {
     searchMovies,
     toggleMode,
-    searchedMovies,
     setSearchedMovies,
-    isLoading
+    isLoading,
+    user
   } = useGlobalContext()
-  const [query, setQuery] = useState(localStorage.getItem('term'))
+  const [query, setQuery] = useState('')
 
   useEffect(() => {
-    if (isLoading) searchMovies(SEARCH_API + query, query)
-
-    if (!query) setSearchedMovies([])
+    const query = localStorage.getItem('term')
+    if (isLoading && query) searchMovies(SEARCH_API + query, query)
   }, [isLoading])
 
   useEffect(() => {

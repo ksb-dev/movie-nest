@@ -5,7 +5,12 @@ import { useGlobalContext } from '../../context/context'
 import './Logout.css'
 
 const Logout = ({ log }) => {
-  const { toggleMode, setUser, setToken } = useGlobalContext()
+  const {
+    toggleMode,
+    setUser,
+    setToken,
+    setSearchedMovies
+  } = useGlobalContext()
 
   const hide = () => {
     log.current.style.transform = 'translateX(100%)'
@@ -14,9 +19,11 @@ const Logout = ({ log }) => {
   const logout = () => {
     localStorage.removeItem('name')
     localStorage.removeItem('token')
+    localStorage.setItem('mode', 'white')
+    localStorage.removeItem('term')
+    setSearchedMovies([])
     setUser('')
     setToken('')
-    //setWishlist([])
     log.current.style.transform = 'translateX(100%)'
     window.location.reload()
   }

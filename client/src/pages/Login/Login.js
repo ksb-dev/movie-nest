@@ -20,12 +20,17 @@ export default function Login () {
 
   const { error, isPending, login } = useLogin()
 
-  const { user } = useGlobalContext()
+  const { user, setSearchedMovies, setSearchTerm } = useGlobalContext()
 
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (user) navigate('/')
+    if (user) {
+      navigate('/')
+      localStorage.removeItem('term')
+      setSearchedMovies([])
+      setSearchTerm('')
+    }
   }, [user, navigate])
 
   const handleSubmit = e => {
