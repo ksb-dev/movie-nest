@@ -20,7 +20,12 @@ export default function Login () {
 
   const { error, isPending, login } = useLogin()
 
-  const { user, setSearchedMovies, setSearchTerm } = useGlobalContext()
+  const {
+    user,
+    setSearchedMovies,
+    setSearchTerm,
+    loadMovies
+  } = useGlobalContext()
 
   const navigate = useNavigate()
 
@@ -28,10 +33,10 @@ export default function Login () {
     if (user) {
       navigate('/')
       localStorage.removeItem('term')
-      localStorage.setItem('category', 'popular')
+      loadMovies('popular', 1)
       setSearchedMovies([])
       setSearchTerm('')
-      window.location.reload()
+      //window.location.reload()
     }
   }, [user, navigate])
 

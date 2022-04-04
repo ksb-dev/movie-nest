@@ -10,7 +10,8 @@ const Logout = ({ log }) => {
     setUser,
     setToken,
     setSearchedMovies,
-    setWishlist
+    setWishlist,
+    setSearchTerm
   } = useGlobalContext()
 
   const hide = () => {
@@ -26,6 +27,7 @@ const Logout = ({ log }) => {
     setUser('')
     setToken('')
     setWishlist([])
+    setSearchTerm('')
     log.current.style.transform = 'translateY(-100%)'
     //window.location.reload()
   }
