@@ -15,7 +15,7 @@ const url =
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
 
 const MovieCard = ({ id, poster_path, title, vote_average, release_date }) => {
-  const { toggleMode, wishlist, user, token, getWishlist } = useGlobalContext()
+  const { toggleMode, wishlist, user, getWishlist } = useGlobalContext()
 
   const [bookmark, setBookmark] = useState(false)
 
@@ -151,7 +151,7 @@ const MovieCard = ({ id, poster_path, title, vote_average, release_date }) => {
         </div>
 
         <div className='rating-bookmark'>
-          {!bookmark && (
+          {user && !bookmark && (
             <h5
               id='add'
               onClick={() =>
@@ -162,11 +162,13 @@ const MovieCard = ({ id, poster_path, title, vote_average, release_date }) => {
             </h5>
           )}
 
-          {bookmark && (
+          {user && bookmark && (
             <h5 id='remove' onClick={() => deleteBookmark(id)}>
               <i className='fa-solid fa-trash-can'></i> Wishlist
             </h5>
           )}
+
+          {!user && <h5 id='add'>Login to wishlist</h5>}
         </div>
       </div>
     </>
