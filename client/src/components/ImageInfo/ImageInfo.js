@@ -15,7 +15,7 @@ const url =
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
 
 const ImageInfo = ({ movie, getTrailer, id }) => {
-  const { toggleMode, wishlist, user } = useGlobalContext()
+  const { toggleMode, wishlist, getWishlist } = useGlobalContext()
 
   const [bookmark, setBookmark] = useState(false)
 
@@ -38,7 +38,8 @@ const ImageInfo = ({ movie, getTrailer, id }) => {
         if (wish.movie_id === Number(id)) setBookmark(true)
       })
     }
-  }, [user, wishlist])
+    if (wishlist.length === 0) setBookmark(false)
+  }, [wishlist])
 
   const addBookmark = async (
     id,
@@ -50,7 +51,7 @@ const ImageInfo = ({ movie, getTrailer, id }) => {
     const token = localStorage.getItem('token')
 
     try {
-      await axios.post(
+      const response = await axios.post(
         'http://localhost:5000/api/v1/wishlist',
         {
           movie_data: {
@@ -67,6 +68,8 @@ const ImageInfo = ({ movie, getTrailer, id }) => {
           }
         }
       )
+
+      if (response) getWishlist()
       //console.log(response.data.wish)
     } catch (error) {
       //console.log(error.response.data.message)
@@ -77,14 +80,20 @@ const ImageInfo = ({ movie, getTrailer, id }) => {
     const token = localStorage.getItem('token')
 
     try {
-      await axios.delete(`http://localhost:5000/api/v1/wishlist/${movieId}`, {
-        headers: {
-          Authorization: `Bearer ${token}`
+      const response = await axios.delete(
+        `http://localhost:5000/api/v1/wishlist/${movieId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
         }
-      })
+      )
       //console.log(response.data.wishlist)
 
-      window.location.reload()
+      if (response) {
+        setBookmark(false)
+        getWishlist()
+      }
     } catch (error) {
       //console.log(error.response.data.message)
     }

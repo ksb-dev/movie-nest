@@ -15,19 +15,21 @@ const url =
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
 
 const MovieCard = ({ id, poster_path, title, vote_average, release_date }) => {
-  const { toggleMode, wishlist, user, token } = useGlobalContext()
+  const { toggleMode, wishlist, user, token, getWishlist } = useGlobalContext()
 
   const [bookmark, setBookmark] = useState(false)
 
   useEffect(() => {
     if (wishlist) {
-      wishlist.map(wish => {
-        if (wish.movie_id === id) setBookmark(true)
-      })
+      for (let i = 0; i < wishlist.length; i++) {
+        if (wishlist[i].movie_id === id) {
+          setBookmark(true)
+        }
+      }
     }
 
     if (wishlist.length === 0) setBookmark(false)
-  }, [user, token, wishlist, id])
+  }, [wishlist])
 
   const getClassByRate = vote => {
     if (vote >= 8) {
@@ -49,7 +51,7 @@ const MovieCard = ({ id, poster_path, title, vote_average, release_date }) => {
     const token = localStorage.getItem('token')
 
     try {
-      await axios.post(
+      const response = await axios.post(
         'http://localhost:5000/api/v1/wishlist',
         {
           movie_data: {
@@ -67,6 +69,8 @@ const MovieCard = ({ id, poster_path, title, vote_average, release_date }) => {
         }
       )
 
+      if (response) getWishlist()
+
       //setWishlist(response.data.wishlists)
     } catch (error) {
       //console.log(error.response.data.message)
@@ -77,14 +81,23 @@ const MovieCard = ({ id, poster_path, title, vote_average, release_date }) => {
     const token = localStorage.getItem('token')
 
     try {
-      await axios.delete(`http://localhost:5000/api/v1/wishlist/${movieId}`, {
-        headers: {
-          Authorization: `Bearer ${token}`
+      const response = await axios.delete(
+        `http://localhost:5000/api/v1/wishlist/${movieId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
         }
-      })
-      //setWishlist(response.data.wishlists)
+      )
 
-      window.location.reload()
+      if (response) {
+        setBookmark(false)
+        getWishlist()
+      }
+
+      //setWishlist(response.data.wish)
+
+      //window.location.reload()
     } catch (error) {
       //console.log(error.response.data.message)
     }

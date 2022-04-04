@@ -52,7 +52,7 @@ const AppProvider = ({ children }) => {
     if (user) {
       getWishlist()
     }
-  }, [user, token, wishlist])
+  }, [user])
 
   const searchMovies = async (searchTerm, queryTerm) => {
     window.scroll({
