@@ -1,37 +1,65 @@
 .logout {
   position: fixed;
-  top: 3rem;
+  top: 0rem;
   right: 0;
   z-index: 2;
   margin: 0 auto;
   padding: 1rem;
-  transform: translateX(100%);
+  transform: translateY(-100%);
   border-radius: 3px;
   letter-spacing: 1px;
   transition: transform 0.3s ease;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.logout h4 {
+.logout .box {
+  padding: 2rem;
+  border-radius: 3px;
+}
+
+.logout .box h4 {
   text-transform: none;
 }
 
-.logout .options {
+.logout .box .options {
+  margin-top: 2rem;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 
-.logout .options h5 {
+.logout .box .options h5 {
   cursor: pointer;
+  margin: 0 2rem;
+}
+
+.logout .box .options h5:hover {
+  transform: scale(1.2);
+  transition: all 0.3s ease;
 }
 
 .dark {
-  background: #0d253f;
+  background: rgba(13, 37, 63, 0.95);
   color: #fff;
 }
 
 .light {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.95);
+  color: #0d253f;
+}
+
+.darker {
+  background: rgba(13, 37, 63);
+  color: #fff;
+}
+
+.lighter {
+  background: rgba(255, 255, 255);
   color: #0d253f;
 }
 

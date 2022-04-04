@@ -53,7 +53,7 @@ const Header = () => {
   }
 
   const showLogout = () => {
-    log.current.style.transform = 'translateX(0%)'
+    log.current.style.transform = 'translateY(0%)'
   }
 
   const handleClick = category => {
