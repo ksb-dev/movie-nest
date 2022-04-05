@@ -90,7 +90,7 @@
 @media screen and (max-width: 640px) {
   .cat-genre {
     padding-top: 3.5rem;
-    padding-bottom: 0rem;
+    padding-bottom: 1rem;
   }
 
   .all {
