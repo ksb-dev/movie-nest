@@ -9,10 +9,9 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
     movies,
     setFiltered,
     wishlist,
-    wishlistFiltered,
     setWishlistFiltered,
     more,
-    setMore
+    toggleMode
   } = useGlobalContext()
 
   const dropDown = useRef(null)
@@ -39,7 +38,13 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
 
   return (
     <div className='filtered'>
-      <select ref={dropDown} onClick={handleClick}>
+      <select
+        ref={dropDown}
+        onClick={handleClick}
+        className={
+          toggleMode === 'white' ? 'select filterDark' : 'select filterWhite'
+        }
+      >
         <option value='0'>All</option>
         <option value='28'>Action</option>
         <option value='12'>Adventure</option>

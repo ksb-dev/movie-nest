@@ -1,17 +1,16 @@
 .cat-genre {
   display: flex;
+  align-items: flex-end;
   justify-content: space-around;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 4rem 1rem;
-  padding-bottom: 0rem;
+  padding: 5rem 1rem;
+  padding-bottom: 2rem;
 }
 
 .cate {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-transform: capitalize;
+  margin: 0;
 }
 
 .cate span {
@@ -72,6 +71,7 @@
 @media screen and (max-width: 640px) {
   .cat-genre {
     padding-top: 3.5rem;
+    padding-bottom: 0rem;
   }
 
   .cate span {
