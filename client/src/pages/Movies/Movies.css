@@ -1,8 +1,13 @@
-.category {
-  padding-top: 4rem;
+.cat-genre {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+  padding-bottom: 0rem;
+}
+
+.category {
   text-transform: uppercase;
 }
 
@@ -81,7 +86,7 @@
 }
 
 @media screen and (max-width: 640px) {
-  .category {
+  .cat-genre {
     padding-top: 3.5rem;
   }
 

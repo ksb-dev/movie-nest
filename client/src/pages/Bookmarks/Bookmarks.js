@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 // Context
 import { useGlobalContext } from '../../context/context'
@@ -7,12 +7,24 @@ import { useGlobalContext } from '../../context/context'
 import Header from '../../components/Header/Header'
 import MovieCard from '../../components/MovieCard/MovieCard'
 import Footer from '../../components/Footer/Footer'
+import Filtered from '../../components/Filtered/Filtered'
 
 // Style
 import './Bookmarks.css'
 
 const Bookmarks = () => {
-  const { isLoading, toggleMode, wishlist } = useGlobalContext()
+  const {
+    isLoading,
+    toggleMode,
+    wishlistFiltered,
+    setWishlistFiltered,
+    wishlist
+  } = useGlobalContext()
+  const [activeGenre, setActiveGenre] = useState(0)
+
+  useEffect(() => {
+    setWishlistFiltered(wishlist)
+  }, [])
 
   if (isLoading) {
     return <div className='loading'></div>
@@ -21,31 +33,34 @@ const Bookmarks = () => {
   return (
     <>
       <Header />
-      {/* single movie */}
 
       {/* movie category*/}
 
-      <h4
-        className={
-          toggleMode === 'white'
-            ? 'cate blackColorCategory whiteMovies'
-            : 'cate whiteColorCategory blackMovies'
-        }
-      >
-        {wishlist !== null && (
-          <span id='wish'>
-            Wishlist <span>{wishlist.length}</span>
-          </span>
-        )}
-      </h4>
+      <div className='cat-genre'>
+        <h4
+          className={
+            toggleMode === 'white'
+              ? 'cate blackColorCategory whiteMovies'
+              : 'cate whiteColorCategory blackMovies'
+          }
+        >
+          {wishlistFiltered !== null && (
+            <span id='wish'>
+              wishlist <span>{wishlistFiltered.length}</span>
+            </span>
+          )}
+        </h4>
+
+        <Filtered activeGenre={activeGenre} setActiveGenre={setActiveGenre} />
+      </div>
 
       <section className='all'>
-        {!wishlist.length && (
-          <h3 style={{ color: 'tomato' }}>Add movies to Wishlist</h3>
+        {!wishlistFiltered.length && (
+          <h3 style={{ color: 'tomato' }}>Add movies to wishlist</h3>
         )}
 
-        {wishlist &&
-          wishlist.map(movie => {
+        {wishlistFiltered &&
+          wishlistFiltered.map(movie => {
             const {
               movie_id,
               movie_name,

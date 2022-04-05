@@ -27,6 +27,11 @@ const WishListSchema = new mongoose.Schema(
       required: true
     },
 
+    genre: {
+      type: Array,
+      required: true
+    },
+
     createdBy: {
       type: mongoose.Types.ObjectId,
       ref: 'User',

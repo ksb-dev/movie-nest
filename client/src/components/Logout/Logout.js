@@ -11,7 +11,8 @@ const Logout = ({ log }) => {
     setToken,
     setSearchedMovies,
     setWishlist,
-    setSearchTerm
+    setSearchTerm,
+    setWishlistFiltered
   } = useGlobalContext()
 
   const hide = () => {
@@ -23,6 +24,7 @@ const Logout = ({ log }) => {
     localStorage.removeItem('token')
     localStorage.removeItem('term')
     setSearchedMovies([])
+    setWishlistFiltered([])
     setUser('')
     setToken('')
     setWishlist([])

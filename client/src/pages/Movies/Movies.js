@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 // Context
 import { useGlobalContext } from '../../context/context'
@@ -7,20 +7,29 @@ import { useGlobalContext } from '../../context/context'
 import Header from '../../components/Header/Header'
 import MovieCard from '../../components/MovieCard/MovieCard'
 import Footer from '../../components/Footer/Footer'
+import Filtered from '../../components/Filtered/Filtered'
 
 // Style
 import './Movies.css'
 
 const Movies = () => {
   let {
-    movies,
     isLoading,
     category,
     toggleMode,
     fetchMovies,
     page,
-    setPage
+    setPage,
+    filtered,
+    setFiltered,
+    movies
   } = useGlobalContext()
+
+  const [activeGenre, setActiveGenre] = useState(0)
+
+  useEffect(() => {
+    setFiltered(movies)
+  }, [category])
 
   const POPULAR = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}`
   const TRENDING = `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&page=${page}`
@@ -46,28 +55,38 @@ const Movies = () => {
   return (
     <>
       <Header />
-      {/* single movie */}
 
       {/* movie category*/}
 
-      {category && (
-        <h4 className='category'>
-          <span
-            className={
-              toggleMode === 'white'
-                ? 'blackColorCategory'
-                : 'whiteColorCategory'
-            }
-          >
-            {category}
-          </span>
-        </h4>
-      )}
+      <div className='cat-genre'>
+        {category && (
+          <h4 className='category'>
+            <span
+              className={
+                toggleMode === 'white'
+                  ? 'blackColorCategory'
+                  : 'whiteColorCategory'
+              }
+            >
+              {category}
+            </span>
+          </h4>
+        )}
+
+        <Filtered activeGenre={activeGenre} setActiveGenre={setActiveGenre} />
+      </div>
 
       <section className='all'>
-        {movies &&
-          movies.map(movie => {
-            const { id, title, poster_path, release_date, vote_average } = movie
+        {filtered &&
+          filtered.map(movie => {
+            const {
+              id,
+              title,
+              poster_path,
+              release_date,
+              vote_average,
+              genre_ids
+            } = movie
 
             return (
               <article className='one-movie' key={id}>
@@ -78,10 +97,15 @@ const Movies = () => {
                   poster_path={poster_path}
                   vote_average={vote_average}
                   release_date={release_date}
+                  genre_ids={genre_ids}
                 />
               </article>
             )
           })}
+
+        {filtered.length == 0 && (
+          <h3 style={{ color: 'tomato' }}>No movies found</h3>
+        )}
       </section>
 
       <div className='more'>

@@ -1,5 +1,13 @@
+.cat-genre {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+  padding-bottom: 0rem;
+}
+
 .cate {
-  padding-top: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,7 +70,7 @@
 }
 
 @media screen and (max-width: 640px) {
-  .cate {
+  .cat-genre {
     padding-top: 3.5rem;
   }
 

@@ -14,7 +14,14 @@ const url =
   'https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png'
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
 
-const MovieCard = ({ id, poster_path, title, vote_average, release_date }) => {
+const MovieCard = ({
+  id,
+  poster_path,
+  title,
+  vote_average,
+  release_date,
+  genre_ids
+}) => {
   const { toggleMode, wishlist, user, getWishlist } = useGlobalContext()
 
   const [bookmark, setBookmark] = useState(false)
@@ -46,7 +53,8 @@ const MovieCard = ({ id, poster_path, title, vote_average, release_date }) => {
     title,
     poster_path,
     release_date,
-    vote_average
+    vote_average,
+    genre_ids
   ) => {
     const token = localStorage.getItem('token')
 
@@ -59,7 +67,8 @@ const MovieCard = ({ id, poster_path, title, vote_average, release_date }) => {
             movie_name: title,
             poster_path,
             movie_vote: vote_average,
-            release_date
+            release_date,
+            genre: genre_ids
           }
         },
         {
@@ -155,7 +164,14 @@ const MovieCard = ({ id, poster_path, title, vote_average, release_date }) => {
             <h5
               id='add'
               onClick={() =>
-                addBookmark(id, title, poster_path, release_date, vote_average)
+                addBookmark(
+                  id,
+                  title,
+                  poster_path,
+                  release_date,
+                  vote_average,
+                  genre_ids
+                )
               }
             >
               <i className='fa-solid fa-plus'></i> Wishlist

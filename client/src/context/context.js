@@ -22,6 +22,9 @@ const AppProvider = ({ children }) => {
   const [user, setUser] = useState('')
   const [token, setToken] = useState('')
   const [wishlist, setWishlist] = useState([])
+  const [filtered, setFiltered] = useState(movies)
+  const [wishlistFiltered, setWishlistFiltered] = useState(wishlist)
+  const [more, setMore] = useState(false)
 
   useEffect(() => {
     const userName = localStorage.getItem('name')
@@ -41,6 +44,7 @@ const AppProvider = ({ children }) => {
         }
       )
       setWishlist(response.data.wishlists)
+      setWishlistFiltered(response.data.wishlists)
     } catch (error) {
       //console.log(error.response.data.message)
     }
@@ -119,8 +123,12 @@ const AppProvider = ({ children }) => {
       } else {
         if (page === 1) {
           setMovies(data.results)
+          setFiltered(data.results)
+          setMore(!more)
         } else {
           setMovies([...movies, ...data.results])
+          setFiltered([...filtered, ...data.results])
+          setMore(!more)
         }
         setError({ show: false, msg: '' })
         setIsLoading(false)
@@ -178,7 +186,13 @@ const AppProvider = ({ children }) => {
         setToken,
         wishlist,
         getWishlist,
-        setWishlist
+        setWishlist,
+        filtered,
+        setFiltered,
+        wishlistFiltered,
+        setWishlistFiltered,
+        more,
+        setMore
       }}
     >
       {children}
