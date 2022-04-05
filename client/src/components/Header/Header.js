@@ -122,7 +122,7 @@ const Header = () => {
           <h4 onClick={() => handleClick('popular')}>Moviefy</h4>
 
           <div className='mode-menu'>
-            <p>
+            {/*<p>
               <Link
                 to='/'
                 className={
@@ -134,7 +134,7 @@ const Header = () => {
                 <i className='fa-solid fa-house'></i>
                 <span>Home</span>
               </Link>
-            </p>
+              </p>*/}
 
             <p>
               <Link

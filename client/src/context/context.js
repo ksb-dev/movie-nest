@@ -22,8 +22,8 @@ const AppProvider = ({ children }) => {
   const [user, setUser] = useState('')
   const [token, setToken] = useState('')
   const [wishlist, setWishlist] = useState([])
-  const [filtered, setFiltered] = useState(movies)
-  const [wishlistFiltered, setWishlistFiltered] = useState(wishlist)
+  const [filtered, setFiltered] = useState('')
+  const [wishlistFiltered, setWishlistFiltered] = useState('')
   const [more, setMore] = useState(false)
 
   useEffect(() => {

@@ -86,7 +86,7 @@
 
 .one-movie .movie-info .rating-bookmark #add:hover {
   background: rgb(108, 203, 0);
-  transition: color 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .one-movie .movie-info .rating-bookmark #add i {
@@ -106,7 +106,7 @@
 
 .one-movie .movie-info .rating-bookmark #remove:hover {
   background: rgb(255, 51, 51);
-  transition: color 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .one-movie .movie-info .rating-bookmark #remove i {
