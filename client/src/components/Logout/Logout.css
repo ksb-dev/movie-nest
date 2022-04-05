@@ -1,57 +1,49 @@
 .logout {
   position: fixed;
-  top: 0rem;
+  top: 3.5rem;
   right: 0;
   z-index: 2;
   margin: 0 auto;
-  padding: 1rem;
-  transform: translateY(-100%);
-  border-radius: 3px;
-  letter-spacing: 1px;
-  transition: transform 0.3s ease;
-  width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.logout .box {
-  padding: 2rem;
+  padding: 1rem;
+  transform: translateX(105%);
   border-radius: 3px;
-  margin-top: -1rem;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease;
 }
 
-.logout .box h4 {
+.logout h4 {
   text-transform: none;
-  text-align: center;
 }
 
-.logout .box .options {
-  width: 100vw;
+.logout .options {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.logout .box .options h5 {
+.logout .options h5 {
   cursor: pointer;
   margin: 0 2rem;
 }
 
-.logout .box .options h5:hover {
+.logout .options h5:hover {
   transform: scale(1.2);
   transition: all 0.3s ease;
 }
 
 .dark {
-  background: rgba(13, 37, 63, 0.95);
+  background: rgba(13, 37, 63);
   color: #fff;
+  box-shadow: 0px 0px 10px #fff;
 }
 
 .light {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255);
   color: #0d253f;
+  box-shadow: 0px 0px 10px #0d253f;
 }
 
 .darker {
@@ -67,6 +59,6 @@
 @media screen and (max-width: 640px) {
   .logout {
     top: unset;
-    bottom: 3rem;
+    bottom: 3.5rem;
   }
 }

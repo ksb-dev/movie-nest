@@ -15,20 +15,19 @@ const Logout = ({ log }) => {
   } = useGlobalContext()
 
   const hide = () => {
-    log.current.style.transform = 'translateY(-100%)'
+    log.current.style.transform = 'translateX(105%)'
   }
 
   const logout = () => {
     localStorage.removeItem('name')
     localStorage.removeItem('token')
-    localStorage.setItem('mode', 'white')
     localStorage.removeItem('term')
     setSearchedMovies([])
     setUser('')
     setToken('')
     setWishlist([])
     setSearchTerm('')
-    log.current.style.transform = 'translateY(-100%)'
+    log.current.style.transform = 'translateX(105%)'
     //window.location.reload()
   }
 
@@ -37,12 +36,10 @@ const Logout = ({ log }) => {
       ref={log}
       className={toggleMode === 'white' ? 'logout light' : 'logout dark'}
     >
-      <div className={toggleMode === 'white' ? 'box lighter' : 'box darker'}>
-        <h4>Do you want to logout?</h4>
-        <div className='options'>
-          <h5 onClick={logout}>Yes</h5>
-          <h5 onClick={hide}>No</h5>
-        </div>
+      <h4>Do you want to logout?</h4>
+      <div className='options'>
+        <h5 onClick={logout}>Yes</h5>
+        <h5 onClick={hide}>No</h5>
       </div>
     </div>
   )
