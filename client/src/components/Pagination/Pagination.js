@@ -8,7 +8,7 @@ const Pagination = ({ data, pageLimit, dataLimit, handleClick }) => {
   const [pages] = useState(Math.round(data.length / dataLimit))
   const [currentPage, setCurrentPage] = useState(1)
 
-  const { page, setPage } = useGlobalContext()
+  const { page, setPage, toggleMode } = useGlobalContext()
 
   useEffect(() => {
     handleClick(page)
@@ -60,7 +60,7 @@ const Pagination = ({ data, pageLimit, dataLimit, handleClick }) => {
           onClick={goToPreviousPage}
           className={`prev ${page === 1 ? 'disabled' : ''}`}
         >
-          prev
+          <i class='fa-solid fa-circle-chevron-left fa-2x'></i>
         </button>
 
         {/* show page numbers */}
@@ -68,7 +68,15 @@ const Pagination = ({ data, pageLimit, dataLimit, handleClick }) => {
           <button
             key={index}
             onClick={changePage}
-            className={`paginationItem ${page === item ? 'active' : null}`}
+            className={
+              toggleMode === 'white'
+                ? `paginationItem  ${
+                    page === item ? 'darkActive' : 'darkNumber'
+                  }`
+                : `paginationItem  ${
+                    page === item ? 'lightActive' : 'lightNumber'
+                  }`
+            }
           >
             <span>{item}</span>
           </button>
@@ -77,9 +85,9 @@ const Pagination = ({ data, pageLimit, dataLimit, handleClick }) => {
         {/* next button */}
         <button
           onClick={goToNextPage}
-          className={`next ${currentPage === pages ? 'disabled' : ''}`}
+          className={`next ${page === pages ? 'disabled' : ''}`}
         >
-          next
+          <i class='fa-solid fa-circle-chevron-right fa-2x'></i>
         </button>
       </div>
     </div>
