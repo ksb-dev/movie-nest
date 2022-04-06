@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 import { useGlobalContext } from '../../context/context'
 
@@ -15,6 +15,10 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
   } = useGlobalContext()
 
   const dropDown = useRef(null)
+
+  const [isActive, setIsActive] = useState(false)
+  const options = ['All', 'Action', 'Adventure', 'Thriller', 'Comedy', 'Horror']
+  const [selected, setSelected] = useState(options[0])
 
   useEffect(() => {
     if (activeGenre === 0) {
@@ -104,12 +108,26 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
     setWishlistFiltered(filterWishlist)
   }, [activeGenre, more])
 
-  const handleClick = () => {
-    setActiveGenre(Number(dropDown.current.value))
+  const handleClick = genre => {
+    console.log(genre === 'All')
+    //setActiveGenre(Number(dropDown.current.value))
+    if (genre === 'All') {
+      setActiveGenre(0)
+    } else if (genre === 'Action') {
+      setActiveGenre(28)
+    } else if (genre === 'Adventure') {
+      setActiveGenre(12)
+    } else if (genre === 'Thriller') {
+      setActiveGenre(53)
+    } else if (genre === 'Comedy') {
+      setActiveGenre(35)
+    } else if (genre === 'Horror') {
+      setActiveGenre(27)
+    }
   }
 
   return (
-    <div className='filtered'>
+    /*<div className='filtered'>
       <i
         className={
           toggleMode === 'white'
@@ -121,7 +139,7 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
         ref={dropDown}
         onClick={handleClick}
         className={
-          toggleMode === 'white' ? 'select filterDark' : 'select filterWhite'
+          toggleMode === 'white' ? 'select filterDark' : 'select filterLight'
         }
       >
         <option value='0'>All</option>
@@ -135,6 +153,46 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
         <option value='3'>Ascending (A - Z)</option>
         <option value='4'>Descending (Z - A)</option>
       </select>
+    </div>*/
+
+    <div
+      className={
+        toggleMode === 'white' ? 'dropdown filterDark' : 'dropdown filterLight'
+      }
+    >
+      <div className='dropdown-btn' onClick={() => setIsActive(!isActive)}>
+        {selected}{' '}
+        {isActive ? (
+          <i className='fa-solid fa-caret-up'></i>
+        ) : (
+          <i className='fa-solid fa-caret-down'></i>
+        )}
+      </div>
+      {isActive && (
+        <div
+          className={
+            toggleMode === 'white'
+              ? 'dropdown-content filterDark'
+              : 'dropdown-content filterLight'
+          }
+        >
+          {options.map((option, index) => {
+            return (
+              <div
+                key={index}
+                className='dropdown-item'
+                onClick={e => {
+                  setSelected(e.target.textContent)
+                  setIsActive(!isActive)
+                  handleClick(e.target.textContent)
+                }}
+              >
+                {option}
+              </div>
+            )
+          })}
+        </div>
+      )}
     </div>
   )
 }
