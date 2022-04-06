@@ -5,8 +5,8 @@ import { useGlobalContext } from '../../context/context'
 
 // Components
 import SearchedMovies from '../../components/SearchedMovies/SearchedMovies'
-import Header from '../../components/Header/Header'
-import Footer from '../../components/Footer/Footer'
+import SearchHeader from '../../components/SearchHeader/SearchHeader'
+import SearchFooter from '../../components/SearchFooter/SearchFooter'
 
 import './Search.css'
 
@@ -31,7 +31,7 @@ const Search = () => {
 
   return (
     <>
-      <Header />
+      <SearchHeader />
       <div
         className={
           toggleMode === 'white' ? 'search lightSearch' : 'search darkSearch'
@@ -74,7 +74,7 @@ const Search = () => {
 
       <SearchedMovies />
 
-      <Footer />
+      <SearchFooter />
     </>
   )
 }

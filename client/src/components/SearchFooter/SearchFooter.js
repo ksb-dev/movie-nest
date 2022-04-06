@@ -4,12 +4,10 @@ import { useNavigate } from 'react-router-dom'
 
 import { useGlobalContext } from '../../context/context'
 
-import Filtered from '../Filtered/Filtered'
-
 // Styles
-import './Footer.css'
+import './SearchFooter.css'
 
-const Footer = () => {
+const SearchFooter = () => {
   const {
     toggleMode,
     activeGenre,
@@ -41,9 +39,8 @@ const Footer = () => {
       <h1 className='name' onClick={() => handleClick('popular')}>
         Moviefy
       </h1>
-      <Filtered activeGenre={activeGenre} setActiveGenre={setActiveGenre} />
     </div>
   )
 }
 
-export default Footer
+export default SearchFooter

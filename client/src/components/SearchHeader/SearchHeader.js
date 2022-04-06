@@ -6,12 +6,11 @@ import { useGlobalContext } from '../../context/context'
 
 // Components
 import Logout from '../Logout/Logout'
-import Filtered from '../Filtered/Filtered'
 
 // Styles
-import './Header.css'
+import './SearchHeader.css'
 
-const Header = () => {
+const SearchHeader = () => {
   const {
     toggleMode,
     setToggleMode,
@@ -126,12 +125,6 @@ const Header = () => {
           <h4 onClick={() => handleClick('popular')}>Moviefy</h4>
 
           <div className='mode-menu'>
-            <div className='head-filter'>
-              <Filtered
-                activeGenre={activeGenre}
-                setActiveGenre={setActiveGenre}
-              />
-            </div>
             <p>
               <Link
                 to='/'
@@ -244,4 +237,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default SearchHeader
