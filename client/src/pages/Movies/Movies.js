@@ -22,10 +22,10 @@ const Movies = () => {
     setPage,
     filtered,
     setFiltered,
-    movies
+    movies,
+    activeGenre,
+    setActiveGenre
   } = useGlobalContext()
-
-  const [activeGenre, setActiveGenre] = useState(0)
 
   useEffect(() => {
     setFiltered(movies)

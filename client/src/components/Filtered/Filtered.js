@@ -17,24 +17,52 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
   const dropDown = useRef(null)
 
   const [isActive, setIsActive] = useState(false)
-  const options = ['All', 'Action', 'Adventure', 'Thriller', 'Comedy', 'Horror']
+  const options = [
+    'All',
+    'Action',
+    'Adventure',
+    'Animation',
+    'Thriller',
+    'Comedy',
+    'Crime',
+    'Drama',
+    'Horror',
+    'Rating (1 - 9)',
+    'Rating (9 - 1)',
+    'Title (A - Z)',
+    'Title (Z - A)'
+  ]
   const [selected, setSelected] = useState(options[0])
 
   useEffect(() => {
     if (activeGenre === 0) {
-      setFiltered(movies)
-      setWishlistFiltered(wishlist)
+      const films = movies.map(movies => movies)
+      setFiltered(films)
+      const wish = wishlist.map(movies => movies)
+      setWishlistFiltered(wish)
       return
     }
 
     if (activeGenre === 1) {
-      const lowestToHighest = movies.sort(
+      const films = []
+
+      movies.forEach(film => {
+        films.push(film)
+      })
+
+      const lowestToHighest = films.sort(
         (a, b) => a.vote_average - b.vote_average
       )
 
       const inc = lowestToHighest.map(movie => movie)
 
-      const lowestToHighestWishlist = wishlist.sort(
+      const wish = []
+
+      wishlist.forEach(film => {
+        wish.push(film)
+      })
+
+      const lowestToHighestWishlist = wish.sort(
         (a, b) => a.movie_vote - b.movie_vote
       )
 
@@ -46,13 +74,25 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
     }
 
     if (activeGenre === 2) {
-      const highestToLowest = movies.sort(
+      const films = []
+
+      movies.forEach(film => {
+        films.push(film)
+      })
+
+      const highestToLowest = films.sort(
         (a, b) => b.vote_average - a.vote_average
       )
 
       const inc = highestToLowest.map(movie => movie)
 
-      const highestToLowestWishlist = wishlist.sort(
+      const wish = []
+
+      wishlist.forEach(film => {
+        wish.push(film)
+      })
+
+      const highestToLowestWishlist = wish.sort(
         (a, b) => b.movie_vote - a.movie_vote
       )
 
@@ -64,14 +104,26 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
     }
 
     if (activeGenre === 3) {
-      const ascendingMovies = movies.sort(function (a, b) {
-        return a.title.localeCompare(b.title) //using String.prototype.localCompare()
+      const films = []
+
+      movies.forEach(film => {
+        films.push(film)
+      })
+
+      const ascendingMovies = films.sort(function (a, b) {
+        return a.title.localeCompare(b.title)
       })
 
       const inc = ascendingMovies.map(movie => movie)
 
-      const ascendingWishlist = wishlist.sort(function (a, b) {
-        return a.movie_name.localeCompare(b.movie_name) //using String.prototype.localCompare()
+      const wish = []
+
+      wishlist.forEach(film => {
+        wish.push(film)
+      })
+
+      const ascendingWishlist = wish.sort(function (a, b) {
+        return a.movie_name.localeCompare(b.movie_name)
       })
 
       const incw = ascendingWishlist.map(movie => movie)
@@ -82,14 +134,26 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
     }
 
     if (activeGenre === 4) {
-      const descendingMovies = movies.sort(function (a, b) {
-        return b.title.localeCompare(a.title) //using String.prototype.localCompare()
+      const films = []
+
+      movies.forEach(film => {
+        films.push(film)
+      })
+
+      const descendingMovies = films.sort(function (a, b) {
+        return b.title.localeCompare(a.title)
       })
 
       const inc = descendingMovies.map(movie => movie)
 
-      const descendingWishlist = wishlist.sort(function (a, b) {
-        return b.movie_name.localeCompare(a.movie_name) //using String.prototype.localCompare()
+      const wish = []
+
+      wishlist.forEach(film => {
+        wish.push(film)
+      })
+
+      const descendingWishlist = wish.sort(function (a, b) {
+        return b.movie_name.localeCompare(a.movie_name)
       })
 
       const incw = descendingWishlist.map(movie => movie)
@@ -109,20 +173,32 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
   }, [activeGenre, more])
 
   const handleClick = genre => {
-    console.log(genre === 'All')
-    //setActiveGenre(Number(dropDown.current.value))
     if (genre === 'All') {
       setActiveGenre(0)
     } else if (genre === 'Action') {
       setActiveGenre(28)
     } else if (genre === 'Adventure') {
       setActiveGenre(12)
+    } else if (genre === 'Animation') {
+      setActiveGenre(16)
     } else if (genre === 'Thriller') {
       setActiveGenre(53)
     } else if (genre === 'Comedy') {
       setActiveGenre(35)
+    } else if (genre === 'Crime') {
+      setActiveGenre(80)
+    } else if (genre === 'Drama') {
+      setActiveGenre(18)
     } else if (genre === 'Horror') {
       setActiveGenre(27)
+    } else if (genre === 'Rating (1 - 9)') {
+      setActiveGenre(1)
+    } else if (genre === 'Rating (9 - 1)') {
+      setActiveGenre(2)
+    } else if (genre === 'Title (A - Z)') {
+      setActiveGenre(3)
+    } else {
+      setActiveGenre(4)
     }
   }
 
@@ -154,46 +230,49 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
         <option value='4'>Descending (Z - A)</option>
       </select>
     </div>*/
-
-    <div
-      className={
-        toggleMode === 'white' ? 'dropdown filterDark' : 'dropdown filterLight'
-      }
-    >
-      <div className='dropdown-btn' onClick={() => setIsActive(!isActive)}>
-        {selected}{' '}
-        {isActive ? (
-          <i className='fa-solid fa-caret-up'></i>
-        ) : (
-          <i className='fa-solid fa-caret-down'></i>
+    <>
+      <div
+        className={
+          toggleMode === 'white'
+            ? 'dropdown filterDark'
+            : 'dropdown filterLight'
+        }
+      >
+        <div className='dropdown-btn' onClick={() => setIsActive(!isActive)}>
+          {selected}{' '}
+          {isActive ? (
+            <i className='fa-solid fa-caret-up'></i>
+          ) : (
+            <i className='fa-solid fa-caret-down'></i>
+          )}
+        </div>
+        {isActive && (
+          <div
+            className={
+              toggleMode === 'white'
+                ? 'dropdown-content filterDark'
+                : 'dropdown-content filterLight'
+            }
+          >
+            {options.map((option, index) => {
+              return (
+                <div
+                  key={index}
+                  className='dropdown-item'
+                  onClick={e => {
+                    setSelected(e.target.textContent)
+                    setIsActive(!isActive)
+                    handleClick(e.target.textContent)
+                  }}
+                >
+                  {option}
+                </div>
+              )
+            })}
+          </div>
         )}
       </div>
-      {isActive && (
-        <div
-          className={
-            toggleMode === 'white'
-              ? 'dropdown-content filterDark'
-              : 'dropdown-content filterLight'
-          }
-        >
-          {options.map((option, index) => {
-            return (
-              <div
-                key={index}
-                className='dropdown-item'
-                onClick={e => {
-                  setSelected(e.target.textContent)
-                  setIsActive(!isActive)
-                  handleClick(e.target.textContent)
-                }}
-              >
-                {option}
-              </div>
-            )
-          })}
-        </div>
-      )}
-    </div>
+    </>
   )
 }
 

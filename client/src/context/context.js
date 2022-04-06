@@ -25,6 +25,7 @@ const AppProvider = ({ children }) => {
   const [filtered, setFiltered] = useState('')
   const [wishlistFiltered, setWishlistFiltered] = useState('')
   const [more, setMore] = useState(false)
+  const [activeGenre, setActiveGenre] = useState(0)
 
   useEffect(() => {
     const userName = localStorage.getItem('name')
@@ -192,7 +193,9 @@ const AppProvider = ({ children }) => {
         wishlistFiltered,
         setWishlistFiltered,
         more,
-        setMore
+        setMore,
+        activeGenre,
+        setActiveGenre
       }}
     >
       {children}

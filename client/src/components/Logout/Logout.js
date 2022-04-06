@@ -16,7 +16,7 @@ const Logout = ({ log }) => {
   } = useGlobalContext()
 
   const hide = () => {
-    log.current.style.transform = 'translateX(105%)'
+    log.current.style.transform = 'translateX(100%)'
   }
 
   const logout = () => {
@@ -29,14 +29,14 @@ const Logout = ({ log }) => {
     setToken('')
     setWishlist([])
     setSearchTerm('')
-    log.current.style.transform = 'translateX(105%)'
+    log.current.style.transform = 'translateX(100%)'
     //window.location.reload()
   }
 
   return (
     <div
       ref={log}
-      className={toggleMode === 'white' ? 'logout light' : 'logout dark'}
+      className={toggleMode === 'white' ? 'logout dark' : 'logout light'}
     >
       <h4>Do you want to logout?</h4>
       <div className='options'>
