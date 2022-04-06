@@ -58,7 +58,11 @@ const Pagination = ({ data, pageLimit, dataLimit, handleClick }) => {
         {/* previous button */}
         <button
           onClick={goToPreviousPage}
-          className={`prev ${page === 1 ? 'disabled' : ''}`}
+          className={
+            toggleMode === 'white'
+              ? ` ${page === 1 ? 'disabled' : 'prevNextDark'}`
+              : ` ${page === 1 ? 'disabled' : 'prevNextLight'}`
+          }
         >
           <i class='fa-solid fa-circle-chevron-left fa-2x'></i>
         </button>
@@ -85,7 +89,11 @@ const Pagination = ({ data, pageLimit, dataLimit, handleClick }) => {
         {/* next button */}
         <button
           onClick={goToNextPage}
-          className={`next ${page === pages ? 'disabled' : ''}`}
+          className={
+            toggleMode === 'white'
+              ? ` ${page === pages ? 'prevNextDark' : 'prevNextDark'}`
+              : ` ${page === pages ? 'prevNextLight' : 'prevNextLight'}`
+          }
         >
           <i class='fa-solid fa-circle-chevron-right fa-2x'></i>
         </button>

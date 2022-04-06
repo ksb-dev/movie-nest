@@ -205,18 +205,22 @@
   }
 
   .header .name-mode-menu .mode-menu p {
-    font-size: 0.8rem;
+    font-size: 1rem;
     padding: 0rem;
     margin-left: 0rem;
     font-weight: unset;
   }
 
   .header .name-mode-menu .mode-menu p i {
-    font-size: 0.8rem;
+    font-size: 1rem;
     padding: 0;
     margin-right: 0.2rem;
   }
 }
 
 @media only screen and (max-width: 640px) {
+  .header .name-mode-menu .mode-menu p,
+  .header .name-mode-menu .mode-menu p i {
+    font-size: 0.8rem;
+  }
 }
