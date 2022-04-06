@@ -18,7 +18,7 @@ const AppProvider = ({ children }) => {
   const [searchedMovies, setSearchedMovies] = useState([])
   const [searchError, setSearchError] = useState({ show: false, msg: '' })
   const [searchTerm, setSearchTerm] = useState('')
-  let [page, setPage] = useState(2)
+  let [page, setPage] = useState(1)
   const [user, setUser] = useState('')
   const [token, setToken] = useState('')
   const [wishlist, setWishlist] = useState([])
@@ -26,6 +26,7 @@ const AppProvider = ({ children }) => {
   const [wishlistFiltered, setWishlistFiltered] = useState('')
   const [more, setMore] = useState(false)
   const [activeGenre, setActiveGenre] = useState(0)
+  const [totalPages, setTotalPages] = useState(0)
 
   useEffect(() => {
     const userName = localStorage.getItem('name')
@@ -104,33 +105,36 @@ const AppProvider = ({ children }) => {
   const fetchMovies = async (url, category, page) => {
     localStorage.setItem('category', category)
 
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    })
+
+    setIsLoading(true)
+    setCategory('')
+
     if (page === 1) {
-      window.scroll({
+      /*window.scroll({
         top: 0,
         left: 0,
         behavior: 'smooth'
-      })
-
-      setIsLoading(true)
-      setCategory('')
+      })*/
     }
 
     try {
       const response = await fetch(url)
       const data = await response.json()
 
+      setTotalPages(data.total_pages)
+
       if (data.results.length === 0) {
         setError({ show: true, msg: 'Movies not found!' })
       } else {
-        if (page === 1) {
-          setMovies(data.results)
-          setFiltered(data.results)
-          setMore(!more)
-        } else {
-          setMovies([...movies, ...data.results])
-          setFiltered([...filtered, ...data.results])
-          setMore(!more)
-        }
+        setMovies(data.results)
+        setFiltered(data.results)
+        setMore(!more)
+
         setError({ show: false, msg: '' })
         setIsLoading(false)
         setCategory(category)
@@ -195,7 +199,9 @@ const AppProvider = ({ children }) => {
         more,
         setMore,
         activeGenre,
-        setActiveGenre
+        setActiveGenre,
+        totalPages,
+        setTotalPages
       }}
     >
       {children}

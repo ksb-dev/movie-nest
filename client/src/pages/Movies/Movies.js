@@ -8,6 +8,7 @@ import Header from '../../components/Header/Header'
 import MovieCard from '../../components/MovieCard/MovieCard'
 import Footer from '../../components/Footer/Footer'
 import Filtered from '../../components/Filtered/Filtered'
+import Pagination from '../../components/Pagination/Pagination'
 
 // Style
 import './Movies.css'
@@ -24,12 +25,16 @@ const Movies = () => {
     setFiltered,
     movies,
     activeGenre,
-    setActiveGenre
+    setActiveGenre,
+    totalPages,
+    setTotalPages
   } = useGlobalContext()
 
   useEffect(() => {
+    //console.log(page)
+
     setFiltered(movies)
-  }, [category])
+  }, [category, page])
 
   const POPULAR = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}`
   const TRENDING = `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&page=${page}`
@@ -41,8 +46,8 @@ const Movies = () => {
     return <div className='loading'></div>
   }
 
-  const handleClick = () => {
-    setPage(page + 1)
+  const handleClick = page => {
+    //setPage(page + 1)
 
     if (category === 'popular') fetchMovies(POPULAR, 'popular', page)
     if (category === 'trending') fetchMovies(TRENDING, 'trending', page)
@@ -108,9 +113,20 @@ const Movies = () => {
         )}
       </section>
 
-      <div className='more'>
-        <button onClick={handleClick}>Load More</button>
-      </div>
+      {/*{!filtered.length == 0 && (
+        <div className='more'>
+          <button onClick={handleClick}>Load More</button>
+        </div>
+      )}*/}
+
+      {filtered.length > 0 && (
+        <Pagination
+          data={filtered}
+          pageLimit={5}
+          dataLimit={20}
+          handleClick={handleClick}
+        />
+      )}
 
       <Footer />
     </>

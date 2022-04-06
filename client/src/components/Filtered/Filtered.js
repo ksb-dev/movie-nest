@@ -11,6 +11,7 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
     wishlist,
     setWishlistFiltered,
     more,
+    setMore,
     toggleMode
   } = useGlobalContext()
 
@@ -175,30 +176,42 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
   const handleClick = genre => {
     if (genre === 'All') {
       setActiveGenre(0)
+      setMore(!more)
     } else if (genre === 'Action') {
       setActiveGenre(28)
+      setMore(!more)
     } else if (genre === 'Adventure') {
       setActiveGenre(12)
+      setMore(!more)
     } else if (genre === 'Animation') {
       setActiveGenre(16)
     } else if (genre === 'Thriller') {
       setActiveGenre(53)
+      setMore(!more)
     } else if (genre === 'Comedy') {
       setActiveGenre(35)
+      setMore(!more)
     } else if (genre === 'Crime') {
       setActiveGenre(80)
+      setMore(!more)
     } else if (genre === 'Drama') {
       setActiveGenre(18)
+      setMore(!more)
     } else if (genre === 'Horror') {
       setActiveGenre(27)
+      setMore(!more)
     } else if (genre === 'Rating (1 - 9)') {
       setActiveGenre(1)
+      setMore(!more)
     } else if (genre === 'Rating (9 - 1)') {
       setActiveGenre(2)
+      setMore(!more)
     } else if (genre === 'Title (A - Z)') {
       setActiveGenre(3)
+      setMore(!more)
     } else {
       setActiveGenre(4)
+      setMore(!more)
     }
   }
 
