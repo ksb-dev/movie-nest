@@ -33,6 +33,7 @@ export default function Login () {
     if (user) {
       navigate('/')
       localStorage.removeItem('term')
+      localStorage.setItem('mode', 'white')
       loadMovies('popular', 1)
       setSearchedMovies([])
       setSearchTerm('')
