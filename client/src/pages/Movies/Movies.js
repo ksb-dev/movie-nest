@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 // Context
 import { useGlobalContext } from '../../context/context'
@@ -7,7 +7,6 @@ import { useGlobalContext } from '../../context/context'
 import Header from '../../components/Header/Header'
 import MovieCard from '../../components/MovieCard/MovieCard'
 import Footer from '../../components/Footer/Footer'
-import Filtered from '../../components/Filtered/Filtered'
 import Pagination from '../../components/Pagination/Pagination'
 
 // Style
@@ -20,14 +19,9 @@ const Movies = () => {
     toggleMode,
     fetchMovies,
     page,
-    setPage,
     filtered,
     setFiltered,
-    movies,
-    activeGenre,
-    setActiveGenre,
-    totalPages,
-    setTotalPages
+    movies
   } = useGlobalContext()
 
   useEffect(() => {
@@ -77,8 +71,6 @@ const Movies = () => {
             </span>
           </h4>
         )}
-
-        <Filtered activeGenre={activeGenre} setActiveGenre={setActiveGenre} />
       </div>
 
       <section className='all'>

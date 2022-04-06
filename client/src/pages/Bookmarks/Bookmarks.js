@@ -7,7 +7,6 @@ import { useGlobalContext } from '../../context/context'
 import Header from '../../components/Header/Header'
 import MovieCard from '../../components/MovieCard/MovieCard'
 import Footer from '../../components/Footer/Footer'
-import Filtered from '../../components/Filtered/Filtered'
 
 // Style
 import './Bookmarks.css'
@@ -50,8 +49,6 @@ const Bookmarks = () => {
             </span>
           )}
         </h4>
-
-        <Filtered activeGenre={activeGenre} setActiveGenre={setActiveGenre} />
       </div>
 
       <section className='all'>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { useGlobalContext } from '../../context/context'
 
@@ -14,8 +14,6 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
     setMore,
     toggleMode
   } = useGlobalContext()
-
-  const dropDown = useRef(null)
 
   const [isActive, setIsActive] = useState(false)
   const options = [
@@ -243,12 +241,12 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
         <option value='4'>Descending (Z - A)</option>
       </select>
     </div>*/
-    <>
+    <div className='dd'>
       <div
         className={
           toggleMode === 'white'
-            ? 'dropdown filterDark'
-            : 'dropdown filterLight'
+            ? 'dropdown filterLight'
+            : 'dropdown filterDark'
         }
       >
         <div className='dropdown-btn' onClick={() => setIsActive(!isActive)}>
@@ -263,8 +261,8 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
           <div
             className={
               toggleMode === 'white'
-                ? 'dropdown-content filterDark'
-                : 'dropdown-content filterLight'
+                ? 'dropdown-content filterLight'
+                : 'dropdown-content filterDark'
             }
           >
             {options.map((option, index) => {
@@ -285,7 +283,7 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
           </div>
         )}
       </div>
-    </>
+    </div>
   )
 }
 

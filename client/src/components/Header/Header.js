@@ -6,6 +6,7 @@ import { useGlobalContext } from '../../context/context'
 
 // Components
 import Logout from '../Logout/Logout'
+import Filtered from '../Filtered/Filtered'
 
 // Styles
 import './Header.css'
@@ -18,6 +19,7 @@ const Header = () => {
     setPage,
     isLoading,
     user,
+    activeGenre,
     setActiveGenre
   } = useGlobalContext()
   const [userName, setUserName] = useState('')
@@ -124,6 +126,10 @@ const Header = () => {
           <h4 onClick={() => handleClick('popular')}>Moviefy</h4>
 
           <div className='mode-menu'>
+            <Filtered
+              activeGenre={activeGenre}
+              setActiveGenre={setActiveGenre}
+            />
             <p>
               <Link
                 to='/'
