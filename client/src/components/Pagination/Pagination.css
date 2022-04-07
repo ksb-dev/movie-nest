@@ -15,6 +15,11 @@
   border-radius: 20px;
 }
 
+.paginationItem:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
 .paginationItem span {
   position: absolute;
   top: 50%;
@@ -38,6 +43,12 @@
   color: #fff;
   margin: 0 10px;
   cursor: pointer;
+}
+
+.prevNextDark:hover,
+.prevNextLight:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
 
 .paginationItem.active {
