@@ -18,7 +18,6 @@ const SearchHeader = () => {
     setPage,
     isLoading,
     user,
-    activeGenre,
     setActiveGenre
   } = useGlobalContext()
   const [userName, setUserName] = useState('')

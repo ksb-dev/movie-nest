@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 // Context
 import { useGlobalContext } from '../../context/context'
@@ -19,7 +19,6 @@ const Bookmarks = () => {
     setWishlistFiltered,
     wishlist
   } = useGlobalContext()
-  const [activeGenre, setActiveGenre] = useState(0)
 
   useEffect(() => {
     setWishlistFiltered(wishlist)

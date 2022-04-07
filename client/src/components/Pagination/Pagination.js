@@ -6,7 +6,6 @@ import './Pagination.css'
 
 const Pagination = ({ data, pageLimit, dataLimit, handleClick }) => {
   const [pages] = useState(Math.round(data.length / dataLimit))
-  const [currentPage, setCurrentPage] = useState(1)
 
   const { page, setPage, toggleMode } = useGlobalContext()
 
@@ -28,10 +27,6 @@ const Pagination = ({ data, pageLimit, dataLimit, handleClick }) => {
     // not yet implemented
     const pageNumber = Number(e.target.textContent)
     setPage(pageNumber)
-  }
-
-  const getPaginatedData = () => {
-    // not yet implemented
   }
 
   const getPaginationGroup = () => {
