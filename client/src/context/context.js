@@ -104,6 +104,7 @@ const AppProvider = ({ children }) => {
 
   const fetchMovies = async (url, category, page) => {
     localStorage.setItem('category', category)
+    localStorage.setItem('page', page)
 
     window.scroll({
       top: 0,
@@ -123,7 +124,7 @@ const AppProvider = ({ children }) => {
     }
 
     try {
-      const response = await fetch(url)
+      const response = await fetch(url + `&page=${page}`)
       const data = await response.json()
 
       setTotalPages(data.total_pages)
@@ -155,9 +156,10 @@ const AppProvider = ({ children }) => {
 
   useEffect(() => {
     const category = localStorage.getItem('category')
+    const page = localStorage.getItem('page')
 
     if (category) {
-      loadMovies(category, 1)
+      loadMovies(category, page)
     } else {
       loadMovies('popular', 1)
     }
