@@ -52,8 +52,12 @@ const Bookmarks = () => {
       </div>
 
       <section className='all'>
-        {!wishlistFiltered.length && (
-          <h3 style={{ color: 'tomato' }}>Add movies to wishlist</h3>
+        {wishlist.length !== 0 && wishlistFiltered.length === 0 && (
+          <h3 style={{ color: 'tomato' }}>No Movies Found</h3>
+        )}
+
+        {wishlist.length === 0 && (
+          <h3 style={{ color: 'tomato' }}>Add Movies To Wishlist</h3>
         )}
 
         {wishlistFiltered &&
