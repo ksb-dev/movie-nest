@@ -9,6 +9,11 @@ const Pagination = ({ data, pageLimit, dataLimit, handleClick }) => {
 
   const { page, setPage, toggleMode } = useGlobalContext()
 
+  const storedPage = Number(localStorage.getItem('page'))
+  const number = storedPage !== 0 ? storedPage : page
+
+  //console.log(number)
+
   useEffect(() => {
     handleClick(page)
   }, [page])
@@ -31,7 +36,7 @@ const Pagination = ({ data, pageLimit, dataLimit, handleClick }) => {
 
   const getPaginationGroup = () => {
     // not yet implemented
-    let start = Math.floor((page - 1) / pageLimit) * pageLimit
+    let start = Math.floor((number - 1) / pageLimit) * pageLimit
     return new Array(pageLimit).fill().map((_, idx) => start + idx + 1)
   }
 
@@ -55,8 +60,8 @@ const Pagination = ({ data, pageLimit, dataLimit, handleClick }) => {
           onClick={goToPreviousPage}
           className={
             toggleMode === 'white'
-              ? ` ${page === 1 ? 'disabled' : 'prevNextDark'}`
-              : ` ${page === 1 ? 'disabled' : 'prevNextLight'}`
+              ? ` ${number === 1 ? 'disabled' : 'prevNextDark'}`
+              : ` ${number === 1 ? 'disabled' : 'prevNextLight'}`
           }
         >
           <i className='fa-solid fa-circle-chevron-left fa-2x'></i>
@@ -70,10 +75,10 @@ const Pagination = ({ data, pageLimit, dataLimit, handleClick }) => {
             className={
               toggleMode === 'white'
                 ? `paginationItem  ${
-                    page === item ? 'darkActive' : 'darkNumber'
+                    number === item ? 'darkActive' : 'darkNumber'
                   }`
                 : `paginationItem  ${
-                    page === item ? 'lightActive' : 'lightNumber'
+                    number === item ? 'lightActive' : 'lightNumber'
                   }`
             }
           >
@@ -86,8 +91,8 @@ const Pagination = ({ data, pageLimit, dataLimit, handleClick }) => {
           onClick={goToNextPage}
           className={
             toggleMode === 'white'
-              ? ` ${page === pages ? 'prevNextDark' : 'prevNextDark'}`
-              : ` ${page === pages ? 'prevNextLight' : 'prevNextLight'}`
+              ? ` ${number === pages ? 'prevNextDark' : 'prevNextDark'}`
+              : ` ${number === pages ? 'prevNextLight' : 'prevNextLight'}`
           }
         >
           <i className='fa-solid fa-circle-chevron-right fa-2x'></i>

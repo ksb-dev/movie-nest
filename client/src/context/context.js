@@ -156,13 +156,10 @@ const AppProvider = ({ children }) => {
 
   useEffect(() => {
     const category = localStorage.getItem('category')
-    const sPage = Number(localStorage.getItem('page'))
+    const page = Number(localStorage.getItem('page'))
 
-    if (Number(sPage) !== 0) setPage(sPage)
-
-    if (category) {
-      if (Number(sPage) === 0) loadMovies(category, page)
-      if (Number(sPage) !== 0) loadMovies(category, sPage)
+    if (category && page !== 0) {
+      loadMovies(category, page)
     } else {
       loadMovies('popular', 1)
     }
