@@ -159,7 +159,7 @@ const AppProvider = ({ children }) => {
     const page = Number(localStorage.getItem('page'))
     const mode = localStorage.sgetItem('mode')
 
-    if (mode !== white) localStorage.setItem('mode', 'white')
+    if (mode !== 'white') localStorage.setItem('mode', 'white')
 
     setPage(page)
 
