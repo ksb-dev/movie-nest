@@ -5,7 +5,7 @@ import axios from 'axios'
 // Context
 import { useGlobalContext } from '../../context/context'
 
-import { motion } from 'framer-motion/dist/es/index'
+// Hooks
 
 // Styles
 import './ImageInfo.css'
