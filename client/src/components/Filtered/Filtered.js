@@ -110,7 +110,7 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
       })
 
       const ascendingMovies = films.sort(function (a, b) {
-        return a.title.localeCompare(b.title)
+        if (a.title) return a.title.localeCompare(b.title)
       })
 
       const inc = ascendingMovies.map(movie => movie)
@@ -140,7 +140,7 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
       })
 
       const descendingMovies = films.sort(function (a, b) {
-        return b.title.localeCompare(a.title)
+        if (b.title) return b.title.localeCompare(a.title)
       })
 
       const inc = descendingMovies.map(movie => movie)

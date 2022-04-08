@@ -4,12 +4,15 @@ import { useParams } from 'react-router-dom'
 // Context
 import { useGlobalContext } from '../../context/context'
 
+// Components
 import Cast from '../../components/Cast/Cast'
 import PersonDetail from '../../components/PersonDetail/PersonDetail'
 import ImageInfo from '../../components/ImageInfo/ImageInfo'
 import Youtube from '../../components/Youtube/Youtube'
 import SearchHeader from '../../components/SearchHeader/SearchHeader'
 import SearchFooter from '../../components/SearchFooter/SearchFooter'
+
+import { motion } from 'framer-motion/dist/es/index'
 
 import './Movie.css'
 

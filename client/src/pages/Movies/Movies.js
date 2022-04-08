@@ -9,6 +9,8 @@ import MovieCard from '../../components/MovieCard/MovieCard'
 import Footer from '../../components/Footer/Footer'
 import Pagination from '../../components/Pagination/Pagination'
 
+import { motion } from 'framer-motion/dist/es/index'
+
 // Style
 import './Movies.css'
 

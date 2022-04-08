@@ -5,8 +5,6 @@ import axios from 'axios'
 // Context
 import { useGlobalContext } from '../../context/context'
 
-// Hooks
-
 // Styles
 import './MovieCard.css'
 
