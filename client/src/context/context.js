@@ -157,9 +157,6 @@ const AppProvider = ({ children }) => {
   useEffect(() => {
     const category = localStorage.getItem('category')
     const sPage = Number(localStorage.getItem('page'))
-    const mode = localStorage.getItem('mode')
-
-    if (mode !== 'white') localStorage.setItem('mode', 'white')
 
     if (Number(sPage) !== 0) setPage(sPage)
 
