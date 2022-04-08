@@ -110,14 +110,12 @@ const Movies = () => {
         </div>
       )}*/}
 
-      {filtered.length > 0 && (
-        <Pagination
-          data={filtered}
-          pageLimit={5}
-          dataLimit={20}
-          handleClick={handleClick}
-        />
-      )}
+      <Pagination
+        data={filtered}
+        pageLimit={5}
+        dataLimit={20}
+        handleClick={handleClick}
+      />
 
       <Footer />
     </>
