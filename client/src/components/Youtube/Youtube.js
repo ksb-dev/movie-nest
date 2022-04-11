@@ -61,8 +61,8 @@ const Youtube = ({ youtube_div, off, trailerUrl, setTrailerUrl }) => {
             <i
               className={
                 toggleMode === 'white'
-                  ? 'fa-solid fa-circle-xmark fa-3x blackColor'
-                  : 'fa-solid fa-circle-xmark fa-3x whiteColor'
+                  ? 'fa-solid fa-xmark fa-3x blackColor'
+                  : 'fa-solid fa-xmark fa-3x whiteColor'
               }
             ></i>
           </button>
