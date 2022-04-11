@@ -52,7 +52,7 @@ const ImageInfo = ({ movie, getTrailer, id }) => {
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/v1/wishlist',
+        '/api/v1/wishlist',
         {
           movie_data: {
             movie_id: id,
@@ -80,14 +80,11 @@ const ImageInfo = ({ movie, getTrailer, id }) => {
     const token = localStorage.getItem('token')
 
     try {
-      const response = await axios.delete(
-        `http://localhost:5000/api/v1/wishlist/${movieId}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
+      const response = await axios.delete(`/api/v1/wishlist/${movieId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`
         }
-      )
+      })
       //console.log(response.data.wishlist)
 
       if (response) {
