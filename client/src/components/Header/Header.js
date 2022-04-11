@@ -132,7 +132,7 @@ const Header = () => {
                 setActiveGenre={setActiveGenre}
               />
             </div>
-            {/* <p>
+            <p>
               <Link
                 to='/'
                 className={
@@ -144,7 +144,7 @@ const Header = () => {
                 <i className='fa-solid fa-house'></i>
                 <span>Home</span>
               </Link>
-              </p>*/}
+            </p>
 
             <p>
               <Link
