@@ -8,8 +8,8 @@ import Cast from '../../components/Cast/Cast'
 import PersonDetail from '../../components/PersonDetail/PersonDetail'
 import ImageInfo from '../../components/ImageInfo/ImageInfo'
 import Youtube from '../../components/Youtube/Youtube'
-import SearchHeader from '../../components/SearchHeader/SearchHeader'
-import SearchFooter from '../../components/SearchFooter/SearchFooter'
+import Header from '../../components/Header/Header'
+import Footer from '../../components/Footer/Footer'
 
 import './Movie.css'
 
@@ -117,7 +117,7 @@ const Movie = () => {
 
   return (
     <div className='full-page'>
-      <SearchHeader />
+      <Header />
 
       {/* Single Movie */}
 
@@ -186,7 +186,7 @@ const Movie = () => {
         setTrailerUrl={setTrailerUrl}
       />
 
-      <SearchFooter />
+      <Footer />
     </div>
   )
 }

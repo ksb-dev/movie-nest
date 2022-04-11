@@ -27,7 +27,6 @@ const Movies = () => {
 
   useEffect(() => {
     if (activeGenre === 0) setFiltered(movies)
-    if (localStorage.getItem('genre') === 'All') setFiltered(movies)
   }, [category, page])
 
   const POPULAR = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}`

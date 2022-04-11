@@ -22,7 +22,6 @@ const Bookmarks = () => {
 
   useEffect(() => {
     setWishlistFiltered(wishlist)
-    localStorage.setItem('wgenre', 'All')
   }, [])
 
   if (isLoading) {

@@ -7,7 +7,6 @@ import { useGlobalContext } from '../../context/context'
 // Components
 import Logout from '../Logout/Logout'
 import Filtered from '../Filtered/Filtered'
-import WishlistFiltered from '../WishlistFiltered/WishlistFiltered'
 
 // Styles
 import './Header.css'
@@ -21,9 +20,7 @@ const Header = () => {
     isLoading,
     user,
     activeGenre,
-    setActiveGenre,
-    activeGenreW,
-    setActiveGenreW
+    setActiveGenre
   } = useGlobalContext()
   const [userName, setUserName] = useState('')
 
@@ -136,27 +133,24 @@ const Header = () => {
                   setActiveGenre={setActiveGenre}
                 />
               )}
-
-              {window.location.pathname === '/bookmarks' && (
-                <WishlistFiltered
-                  activeGenreW={activeGenreW}
-                  setActiveGenreW={setActiveGenreW}
-                />
-              )}
             </div>
-            <p>
-              <Link
-                to='/'
-                className={
-                  toggleMode === 'white'
-                    ? 'headerWhiteColor'
-                    : 'headerBlackColor'
-                }
-              >
-                <i className='fa-solid fa-house'></i>
-                <span>Home</span>
-              </Link>
-            </p>
+            {(window.location.pathname === '/bookmarks' ||
+              window.location.pathname.includes('/movie') ||
+              window.location.pathname === '/search') && (
+              <p>
+                <Link
+                  to='/'
+                  className={
+                    toggleMode === 'white'
+                      ? 'headerWhiteColor'
+                      : 'headerBlackColor'
+                  }
+                >
+                  <i className='fa-solid fa-house'></i>
+                  <span>Home</span>
+                </Link>
+              </p>
+            )}
 
             <p>
               <Link

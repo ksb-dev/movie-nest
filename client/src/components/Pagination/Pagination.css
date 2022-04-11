@@ -102,6 +102,13 @@
   color: #0d253f;
 }
 
+@media screen and (max-width: 786px) {
+  .pagination {
+    bottom: 2.9rem;
+    border-bottom: 3px solid #fff;
+  }
+}
+
 @media screen and (max-width: 640px) {
   .paginationItem {
     height: 25px;

@@ -8,15 +8,16 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
   const {
     movies,
     setFiltered,
+    wishlist,
+    setWishlistFiltered,
     more,
+    setMore,
     isLoading,
     toggleMode,
-    filtered,
-    user
+    filtered
   } = useGlobalContext()
 
   const [isActive, setIsActive] = useState(false)
-
   const options = [
     'All',
     'Action',
@@ -38,7 +39,8 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
     if (activeGenre === 0) {
       const films = movies.map(movies => movies)
       setFiltered(films)
-
+      const wish = wishlist.map(movies => movies)
+      setWishlistFiltered(wish)
       return
     }
 
@@ -55,8 +57,20 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
 
       const inc = lowestToHighest.map(movie => movie)
 
-      setFiltered(inc)
+      const wish = []
 
+      wishlist.forEach(film => {
+        wish.push(film)
+      })
+
+      const lowestToHighestWishlist = wish.sort(
+        (a, b) => a.movie_vote - b.movie_vote
+      )
+
+      const incw = lowestToHighestWishlist.map(movie => movie)
+
+      setFiltered(inc)
+      setWishlistFiltered(incw)
       return
     }
 
@@ -73,8 +87,20 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
 
       const inc = highestToLowest.map(movie => movie)
 
-      setFiltered(inc)
+      const wish = []
 
+      wishlist.forEach(film => {
+        wish.push(film)
+      })
+
+      const highestToLowestWishlist = wish.sort(
+        (a, b) => b.movie_vote - a.movie_vote
+      )
+
+      const incw = highestToLowestWishlist.map(movie => movie)
+
+      setFiltered(inc)
+      setWishlistFiltered(incw)
       return
     }
 
@@ -91,8 +117,20 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
 
       const inc = ascendingMovies.map(movie => movie)
 
-      setFiltered(inc)
+      const wish = []
 
+      wishlist.forEach(film => {
+        wish.push(film)
+      })
+
+      const ascendingWishlist = wish.sort(function (a, b) {
+        return a.movie_name.localeCompare(b.movie_name)
+      })
+
+      const incw = ascendingWishlist.map(movie => movie)
+
+      setFiltered(inc)
+      setWishlistFiltered(incw)
       return
     }
 
@@ -109,14 +147,31 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
 
       const inc = descendingMovies.map(movie => movie)
 
-      setFiltered(inc)
+      const wish = []
 
+      wishlist.forEach(film => {
+        wish.push(film)
+      })
+
+      const descendingWishlist = wish.sort(function (a, b) {
+        return b.movie_name.localeCompare(a.movie_name)
+      })
+
+      const incw = descendingWishlist.map(movie => movie)
+
+      setFiltered(inc)
+      setWishlistFiltered(incw)
       return
     }
 
     const filter = movies.filter(movie => movie.genre_ids.includes(activeGenre))
     setFiltered(filter)
-  }, [activeGenre, more, isLoading, user])
+
+    const filterWishlist = wishlist.filter(movie =>
+      movie.genre.includes(activeGenre)
+    )
+    setWishlistFiltered(filterWishlist)
+  }, [activeGenre, more, isLoading])
 
   const handleClick = genre => {
     if (genre === 'All') {
@@ -149,6 +204,33 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
   }
 
   return (
+    /*<div className='filtered'>
+      <i
+        className={
+          toggleMode === 'white'
+            ? 'fa-solid fa-filter iconDark'
+            : 'fa-solid fa-filter iconWhite'
+        }
+      ></i>
+      <select
+        ref={dropDown}
+        onClick={handleClick}
+        className={
+          toggleMode === 'white' ? 'select filterDark' : 'select filterLight'
+        }
+      >
+        <option value='0'>All</option>
+        <option value='28'>Action</option>
+        <option value='12'>Adventure</option>
+        <option value='53'>Thriller</option>
+        <option value='35'>Comedy</option>
+        <option value='27'>Horror</option>
+        <option value='1'>Lowest (1 - 9)</option>
+        <option value='2'>Highest (9 - 1)</option>
+        <option value='3'>Ascending (A - Z)</option>
+        <option value='4'>Descending (Z - A)</option>
+      </select>
+    </div>*/
     <div className='dd'>
       <div
         className={

@@ -10,7 +10,10 @@ const Pagination = ({ data, pageLimit, dataLimit, handleClick }) => {
   const { page, setPage, toggleMode } = useGlobalContext()
 
   const storedPage = Number(localStorage.getItem('page'))
+
   const number = storedPage !== 0 ? storedPage : page
+
+  //console.log(storedPage, number)
 
   //console.log(number)
 

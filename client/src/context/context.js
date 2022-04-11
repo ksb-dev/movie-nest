@@ -18,9 +18,7 @@ const AppProvider = ({ children }) => {
   const [searchedMovies, setSearchedMovies] = useState([])
   const [searchError, setSearchError] = useState({ show: false, msg: '' })
   const [searchTerm, setSearchTerm] = useState('')
-  let [page, setPage] = useState(
-    localStorage.getItem('page') !== null ? localStorage.getItem('page') : 1
-  )
+  let [page, setPage] = useState(1)
   const [user, setUser] = useState('')
   const [token, setToken] = useState('')
   const [wishlist, setWishlist] = useState([])
@@ -28,10 +26,7 @@ const AppProvider = ({ children }) => {
   const [wishlistFiltered, setWishlistFiltered] = useState('')
   const [more, setMore] = useState(false)
   const [activeGenre, setActiveGenre] = useState(0)
-  const [activeGenreW, setActiveGenreW] = useState(0)
   const [totalPages, setTotalPages] = useState(0)
-
-  console.log(page)
 
   useEffect(() => {
     const userName = localStorage.getItem('name')
@@ -152,6 +147,8 @@ const AppProvider = ({ children }) => {
     const category = localStorage.getItem('category')
     const page = Number(localStorage.getItem('page'))
 
+    setPage(page)
+
     if (category && page !== 0) {
       loadMovies(category, page)
     } else {
@@ -197,9 +194,7 @@ const AppProvider = ({ children }) => {
         activeGenre,
         setActiveGenre,
         totalPages,
-        setTotalPages,
-        activeGenreW,
-        setActiveGenreW
+        setTotalPages
       }}
     >
       {children}
