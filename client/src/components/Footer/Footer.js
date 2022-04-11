@@ -41,7 +41,9 @@ const Footer = () => {
       <h1 className='name' onClick={() => handleClick('popular')}>
         Moviefy
       </h1>
-      <Filtered activeGenre={activeGenre} setActiveGenre={setActiveGenre} />
+      {window.location.pathname === '/' && (
+        <Filtered activeGenre={activeGenre} setActiveGenre={setActiveGenre} />
+      )}
     </div>
   )
 }
