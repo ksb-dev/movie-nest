@@ -7,6 +7,7 @@ import { useGlobalContext } from '../../context/context'
 // Components
 import Logout from '../Logout/Logout'
 import Filtered from '../Filtered/Filtered'
+import WishlistFiltered from '../WishlistFiltered/WishlistFiltered'
 
 // Styles
 import './Header.css'
@@ -20,7 +21,9 @@ const Header = () => {
     isLoading,
     user,
     activeGenre,
-    setActiveGenre
+    setActiveGenre,
+    activeGenreW,
+    setActiveGenreW
   } = useGlobalContext()
   const [userName, setUserName] = useState('')
 
@@ -127,10 +130,19 @@ const Header = () => {
 
           <div className='mode-menu'>
             <div className='head-filter'>
-              <Filtered
-                activeGenre={activeGenre}
-                setActiveGenre={setActiveGenre}
-              />
+              {window.location.pathname === '/' && (
+                <Filtered
+                  activeGenre={activeGenre}
+                  setActiveGenre={setActiveGenre}
+                />
+              )}
+
+              {window.location.pathname === '/bookmarks' && (
+                <WishlistFiltered
+                  activeGenreW={activeGenreW}
+                  setActiveGenreW={setActiveGenreW}
+                />
+              )}
             </div>
             <p>
               <Link

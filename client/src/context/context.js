@@ -26,6 +26,7 @@ const AppProvider = ({ children }) => {
   const [wishlistFiltered, setWishlistFiltered] = useState('')
   const [more, setMore] = useState(false)
   const [activeGenre, setActiveGenre] = useState(0)
+  const [activeGenreW, setActiveGenreW] = useState(0)
   const [totalPages, setTotalPages] = useState(0)
 
   useEffect(() => {
@@ -200,7 +201,9 @@ const AppProvider = ({ children }) => {
         activeGenre,
         setActiveGenre,
         totalPages,
-        setTotalPages
+        setTotalPages,
+        activeGenreW,
+        setActiveGenreW
       }}
     >
       {children}

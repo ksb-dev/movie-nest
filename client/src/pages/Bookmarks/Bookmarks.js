@@ -4,7 +4,7 @@ import React, { useEffect } from 'react'
 import { useGlobalContext } from '../../context/context'
 
 // Components
-import SearchHeader from '../../components/SearchHeader/SearchHeader'
+import Header from '../../components/Header/Header'
 import MovieCard from '../../components/MovieCard/MovieCard'
 import Footer from '../../components/Footer/Footer'
 
@@ -22,6 +22,7 @@ const Bookmarks = () => {
 
   useEffect(() => {
     setWishlistFiltered(wishlist)
+    localStorage.setItem('wgenre', 'All')
   }, [])
 
   if (isLoading) {
@@ -30,7 +31,7 @@ const Bookmarks = () => {
 
   return (
     <>
-      <SearchHeader />
+      <Header />
 
       {/* movie category*/}
 

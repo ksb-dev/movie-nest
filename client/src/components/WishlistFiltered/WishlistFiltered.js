@@ -2,17 +2,14 @@ import React, { useState, useEffect } from 'react'
 
 import { useGlobalContext } from '../../context/context'
 
-import './Filtered.css'
-
-const Filtered = ({ activeGenre, setActiveGenre }) => {
+const WishlistFiltered = ({ activeGenreW, setActiveGenreW }) => {
   const {
-    movies,
-    setFiltered,
+    wishlist,
+    wishlistFiltered,
+    setWishlistFiltered,
     more,
     isLoading,
-    toggleMode,
-    filtered,
-    user
+    toggleMode
   } = useGlobalContext()
 
   const [isActive, setIsActive] = useState(false)
@@ -35,116 +32,113 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
   const [selected, setSelected] = useState('All')
 
   useEffect(() => {
-    if (activeGenre === 0) {
-      const films = movies.map(movies => movies)
-      setFiltered(films)
-
+    if (activeGenreW === 0) {
+      const wish = wishlist.map(movies => movies)
+      setWishlistFiltered(wish)
       return
     }
 
-    if (activeGenre === 1) {
-      const films = []
+    if (activeGenreW === 1) {
+      const wish = []
 
-      movies.forEach(film => {
-        films.push(film)
+      wishlist.forEach(film => {
+        wish.push(film)
       })
 
-      const lowestToHighest = films.sort(
-        (a, b) => a.vote_average - b.vote_average
+      const lowestToHighestWishlist = wish.sort(
+        (a, b) => a.movie_vote - b.movie_vote
       )
 
-      const inc = lowestToHighest.map(movie => movie)
+      const incw = lowestToHighestWishlist.map(movie => movie)
 
-      setFiltered(inc)
-
+      setWishlistFiltered(incw)
       return
     }
 
-    if (activeGenre === 2) {
-      const films = []
+    if (activeGenreW === 2) {
+      const wish = []
 
-      movies.forEach(film => {
-        films.push(film)
+      wishlist.forEach(film => {
+        wish.push(film)
       })
 
-      const highestToLowest = films.sort(
-        (a, b) => b.vote_average - a.vote_average
+      const highestToLowestWishlist = wish.sort(
+        (a, b) => b.movie_vote - a.movie_vote
       )
 
-      const inc = highestToLowest.map(movie => movie)
+      const incw = highestToLowestWishlist.map(movie => movie)
 
-      setFiltered(inc)
-
+      setWishlistFiltered(incw)
       return
     }
 
-    if (activeGenre === 3) {
-      const films = []
+    if (activeGenreW === 3) {
+      const wish = []
 
-      movies.forEach(film => {
-        films.push(film)
+      wishlist.forEach(film => {
+        wish.push(film)
       })
 
-      const ascendingMovies = films.sort(function (a, b) {
-        if (a.title) return a.title.localeCompare(b.title)
+      const ascendingWishlist = wish.sort(function (a, b) {
+        return a.movie_name.localeCompare(b.movie_name)
       })
 
-      const inc = ascendingMovies.map(movie => movie)
+      const incw = ascendingWishlist.map(movie => movie)
 
-      setFiltered(inc)
-
+      setWishlistFiltered(incw)
       return
     }
 
-    if (activeGenre === 4) {
-      const films = []
+    if (activeGenreW === 4) {
+      const wish = []
 
-      movies.forEach(film => {
-        films.push(film)
+      wishlist.forEach(film => {
+        wish.push(film)
       })
 
-      const descendingMovies = films.sort(function (a, b) {
-        if (b.title) return b.title.localeCompare(a.title)
+      const descendingWishlist = wish.sort(function (a, b) {
+        return b.movie_name.localeCompare(a.movie_name)
       })
 
-      const inc = descendingMovies.map(movie => movie)
+      const incw = descendingWishlist.map(movie => movie)
 
-      setFiltered(inc)
-
+      setWishlistFiltered(incw)
       return
     }
 
-    const filter = movies.filter(movie => movie.genre_ids.includes(activeGenre))
-    setFiltered(filter)
-  }, [activeGenre, more, isLoading, user])
+    const filterWishlist = wishlist.filter(movie =>
+      movie.genre.includes(activeGenreW)
+    )
+    setWishlistFiltered(filterWishlist)
+  }, [activeGenreW, more, isLoading])
 
   const handleClick = genre => {
     if (genre === 'All') {
-      setActiveGenre(0)
+      setActiveGenreW(0)
     } else if (genre === 'Action') {
-      setActiveGenre(28)
+      setActiveGenreW(28)
     } else if (genre === 'Adventure') {
-      setActiveGenre(12)
+      setActiveGenreW(12)
     } else if (genre === 'Animation') {
-      setActiveGenre(16)
+      setActiveGenreW(16)
     } else if (genre === 'Thriller') {
-      setActiveGenre(53)
+      setActiveGenreW(53)
     } else if (genre === 'Comedy') {
-      setActiveGenre(35)
+      setActiveGenreW(35)
     } else if (genre === 'Crime') {
-      setActiveGenre(80)
+      setActiveGenreW(80)
     } else if (genre === 'Drama') {
-      setActiveGenre(18)
+      setActiveGenreW(18)
     } else if (genre === 'Horror') {
-      setActiveGenre(27)
+      setActiveGenreW(27)
     } else if (genre === 'Rating (1 - 9)') {
-      setActiveGenre(1)
+      setActiveGenreW(1)
     } else if (genre === 'Rating (9 - 1)') {
-      setActiveGenre(2)
+      setActiveGenreW(2)
     } else if (genre === 'Title (A - Z)') {
-      setActiveGenre(3)
+      setActiveGenreW(3)
     } else {
-      setActiveGenre(4)
+      setActiveGenreW(4)
     }
   }
 
@@ -159,10 +153,10 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
       >
         <div className='dropdown-btn' onClick={() => setIsActive(!isActive)}>
           {/*{selected ? selected : 'All'}*/}
-          {filtered.length === 20 && selected}
-          {filtered.length !== 20 &&
-            localStorage.getItem('genre') &&
-            localStorage.getItem('genre')}
+          {wishlistFiltered.length === wishlist.length && selected}
+          {wishlistFiltered.length !== wishlist.length &&
+            localStorage.getItem('wgenre') &&
+            localStorage.getItem('wgenre')}
 
           {isActive ? (
             <i className='fa-solid fa-caret-up'></i>
@@ -185,7 +179,7 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
                   className='dropdown-item'
                   onClick={e => {
                     setSelected(e.target.textContent)
-                    localStorage.setItem('genre', e.target.textContent)
+                    localStorage.setItem('wgenre', e.target.textContent)
                     setIsActive(!isActive)
                     handleClick(e.target.textContent)
                   }}
@@ -201,4 +195,4 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
   )
 }
 
-export default Filtered
+export default WishlistFiltered
