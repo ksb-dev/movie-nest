@@ -57,6 +57,6 @@
 @media screen and (max-width: 640px) {
   .logout {
     top: unset;
-    bottom: 6rem;
+    bottom: 5.6rem;
   }
 }
