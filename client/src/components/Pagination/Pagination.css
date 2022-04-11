@@ -72,10 +72,12 @@
 
 .dbg {
   background: #0d253f;
+  border-bottom: 2px solid #fff;
 }
 
 .lbg {
   background: #fff;
+  border-bottom: 3px solid #0d253f;
 }
 
 .darkActive {
@@ -105,7 +107,6 @@
 @media screen and (max-width: 786px) {
   .pagination {
     bottom: 2.9rem;
-    border-bottom: 3px solid #fff;
   }
 }
 
