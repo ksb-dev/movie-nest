@@ -4,7 +4,7 @@ import React, { useEffect } from 'react'
 import { useGlobalContext } from '../../context/context'
 
 // Components
-import Header from '../../components/Header/Header'
+import SearchHeader from '../../components/SearchHeader/SearchHeader'
 import MovieCard from '../../components/MovieCard/MovieCard'
 import Footer from '../../components/Footer/Footer'
 
@@ -30,7 +30,7 @@ const Bookmarks = () => {
 
   return (
     <>
-      <Header />
+      <SearchHeader />
 
       {/* movie category*/}
 
