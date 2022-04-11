@@ -100,6 +100,8 @@ const AppProvider = ({ children }) => {
   }
 
   const fetchMovies = async (url, category, page) => {
+    if (page === 0) page = 1
+
     localStorage.setItem('category', category)
     localStorage.setItem('page', page)
 
@@ -149,7 +151,7 @@ const AppProvider = ({ children }) => {
 
     setPage(page)
 
-    if (category && page !== 0) {
+    if (page !== 0 && category) {
       loadMovies(category, page)
     } else {
       loadMovies('popular', 1)
