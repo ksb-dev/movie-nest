@@ -54,14 +54,16 @@ const Pagination = ({ data, pageLimit, dataLimit, handleClick }) => {
         along with page numbers, in our case, 5 page
         numbers at a time
     */}
-      <div className='pagination'>
+      <div
+        className={toggleMode === 'white' ? 'pagination dbg' : 'pagination lbg'}
+      >
         {/* previous button */}
         <button
           onClick={goToPreviousPage}
           className={
             toggleMode === 'white'
-              ? ` ${number === 1 ? 'disabled' : 'prevNextDark'}`
-              : ` ${number === 1 ? 'disabled' : 'prevNextLight'}`
+              ? ` ${number === 1 ? 'disabled' : 'prevNextLight'}`
+              : ` ${number === 1 ? 'disabled' : 'prevNextDark'}`
           }
         >
           <i className='fa-solid fa-circle-chevron-left fa-2x'></i>
@@ -75,10 +77,10 @@ const Pagination = ({ data, pageLimit, dataLimit, handleClick }) => {
             className={
               toggleMode === 'white'
                 ? `paginationItem  ${
-                    number === item ? 'darkActive' : 'darkNumber'
+                    number === item ? 'lightActive' : 'lightNumber'
                   }`
                 : `paginationItem  ${
-                    number === item ? 'lightActive' : 'lightNumber'
+                    number === item ? 'darkActive' : 'darkNumber'
                   }`
             }
           >
@@ -91,8 +93,8 @@ const Pagination = ({ data, pageLimit, dataLimit, handleClick }) => {
           onClick={goToNextPage}
           className={
             toggleMode === 'white'
-              ? ` ${number === pages ? 'prevNextDark' : 'prevNextDark'}`
-              : ` ${number === pages ? 'prevNextLight' : 'prevNextLight'}`
+              ? ` ${number === pages ? 'prevNextLight' : 'prevNextLight'}`
+              : ` ${number === pages ? 'prevNextDark' : 'prevNextDark'}`
           }
         >
           <i className='fa-solid fa-circle-chevron-right fa-2x'></i>
