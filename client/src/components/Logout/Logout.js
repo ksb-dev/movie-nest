@@ -34,7 +34,7 @@ const Logout = ({ log }) => {
     setWishlist([])
     setSearchTerm('')
     log.current.style.transform = 'translateX(100%)'
-    //window.location.reload()
+    window.location.reload()
   }
 
   return (

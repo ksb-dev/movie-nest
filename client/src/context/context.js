@@ -18,7 +18,9 @@ const AppProvider = ({ children }) => {
   const [searchedMovies, setSearchedMovies] = useState([])
   const [searchError, setSearchError] = useState({ show: false, msg: '' })
   const [searchTerm, setSearchTerm] = useState('')
-  let [page, setPage] = useState(1)
+  let [page, setPage] = useState(
+    localStorage.getItem('page') !== null ? localStorage.getItem('page') : 1
+  )
   const [user, setUser] = useState('')
   const [token, setToken] = useState('')
   const [wishlist, setWishlist] = useState([])
@@ -28,6 +30,8 @@ const AppProvider = ({ children }) => {
   const [activeGenre, setActiveGenre] = useState(0)
   const [activeGenreW, setActiveGenreW] = useState(0)
   const [totalPages, setTotalPages] = useState(0)
+
+  console.log(page)
 
   useEffect(() => {
     const userName = localStorage.getItem('name')
@@ -112,14 +116,6 @@ const AppProvider = ({ children }) => {
 
     setIsLoading(true)
     setCategory('')
-
-    if (page === 1) {
-      /*window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-      })*/
-    }
 
     try {
       const response = await fetch(url + `&page=${page}`)
