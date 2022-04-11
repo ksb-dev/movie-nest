@@ -37,14 +37,11 @@ const AppProvider = ({ children }) => {
     const savedToken = localStorage.getItem('token')
 
     try {
-      const response = await axios.get(
-        'http://localhost:5000/api/v1/wishlist',
-        {
-          headers: {
-            Authorization: `Bearer ${savedToken}`
-          }
+      const response = await axios.get('/api/v1/wishlist', {
+        headers: {
+          Authorization: `Bearer ${savedToken}`
         }
-      )
+      })
       setWishlist(response.data.wishlists)
       setWishlistFiltered(response.data.wishlists)
     } catch (error) {
