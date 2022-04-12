@@ -10,6 +10,8 @@ import { useSignup } from '../../hooks/useSignup'
 // Context
 import { useGlobalContext } from '../../context/context'
 
+import { motion } from 'framer-motion'
+
 // styles
 import './Signup.css'
 
@@ -41,15 +43,30 @@ export default function Signup () {
   return (
     <div className='main'>
       <Link to='/'>
-        <h4>
+        <motion.h4
+          initial={{ x: '100vw' }}
+          animate={{ x: 0 }}
+          transition={{ delay: 0.2, duration: 0.2 }}
+        >
           <i className='fa-solid fa-arrow-left'></i> Back to home
-        </h4>
+        </motion.h4>
       </Link>
-      <div className='title'>
+      <motion.div
+        initial={{ x: '-100vw' }}
+        animate={{ x: 0 }}
+        transition={{ delay: 0.2, duration: 0.2 }}
+        className='title'
+      >
         <h1>Moviefy</h1>
-      </div>
+      </motion.div>
 
-      <form onSubmit={handleSubmit} className='signup-form'>
+      <motion.form
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4, duration: 0.4 }}
+        onSubmit={handleSubmit}
+        className='signup-form'
+      >
         <h2>sign up</h2>
 
         <label>
@@ -100,7 +117,7 @@ export default function Signup () {
         </h5>
 
         {error && <p style={{ color: '#fff' }}>{error}</p>}
-      </form>
+      </motion.form>
     </div>
   )
 }

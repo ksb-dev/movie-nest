@@ -12,6 +12,8 @@ import Pagination from '../../components/Pagination/Pagination'
 // Style
 import './Movies.css'
 
+import { motion } from 'framer-motion'
+
 const Movies = () => {
   let {
     isLoading,
@@ -72,7 +74,7 @@ const Movies = () => {
         )}
       </div>
 
-      <section className='all'>
+      <motion.section layout className='all'>
         {filtered &&
           filtered.map(movie => {
             const {
@@ -102,7 +104,7 @@ const Movies = () => {
         {filtered.length == 0 && (
           <h3 style={{ color: 'tomato' }}>No movies found</h3>
         )}
-      </section>
+      </motion.section>
 
       {/*{!filtered.length == 0 && (
         <div className='more'>

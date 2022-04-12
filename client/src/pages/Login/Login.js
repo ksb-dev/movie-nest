@@ -10,6 +10,8 @@ import { useLogin } from '../../hooks/useLogin'
 // Context
 import { useGlobalContext } from '../../context/context'
 
+import { motion } from 'framer-motion'
+
 // styles
 import './Login.css'
 
@@ -56,15 +58,30 @@ export default function Login () {
   return (
     <div className='main'>
       <Link to='/'>
-        <h4>
+        <motion.h4
+          initial={{ x: '100vw' }}
+          animate={{ x: 0 }}
+          transition={{ delay: 0.2, duration: 0.2 }}
+        >
           <i className='fa-solid fa-arrow-left'></i> Back to home
-        </h4>
+        </motion.h4>
       </Link>
-      <div className='title'>
+      <motion.div
+        initial={{ x: '-100vw' }}
+        animate={{ x: 0 }}
+        transition={{ delay: 0.2, duration: 0.2 }}
+        className='title'
+      >
         <h1>Moviefy</h1>
-      </div>
+      </motion.div>
 
-      <form onSubmit={handleSubmit} className='login-form'>
+      <motion.form
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4, duration: 0.4 }}
+        onSubmit={handleSubmit}
+        className='login-form'
+      >
         <h2>login</h2>
 
         <label>
@@ -102,7 +119,7 @@ export default function Login () {
         </h5>
 
         {error && <h4 style={{ color: '#fff' }}>{error}</h4>}
-      </form>
+      </motion.form>
     </div>
   )
 }

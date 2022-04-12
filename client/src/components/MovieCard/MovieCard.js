@@ -5,7 +5,7 @@ import axios from 'axios'
 // Context
 import { useGlobalContext } from '../../context/context'
 
-// Hooks
+import { motion } from 'framer-motion'
 
 // Styles
 import './MovieCard.css'
@@ -110,7 +110,7 @@ const MovieCard = ({
   }
 
   return (
-    <>
+    <div>
       <Link to={`/movie/${id}`}>
         <div
           className={
@@ -124,7 +124,14 @@ const MovieCard = ({
             alt={title}
           />
 
-          <span className={getClassByRate(vote_average)}>{vote_average}</span>
+          <motion.span
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className={getClassByRate(vote_average)}
+          >
+            {vote_average}
+          </motion.span>
         </div>
       </Link>
 
@@ -142,7 +149,7 @@ const MovieCard = ({
             }
           >
             {title &&
-              (title.length > 30 ? title.substring(0, 30) + '...' : title)}
+              (title.length > 25 ? title.substring(0, 25) + '...' : title)}
           </h5>
 
           <div>
@@ -184,7 +191,7 @@ const MovieCard = ({
           {!user && <h5 id='add'>Login to wishlist</h5>}
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

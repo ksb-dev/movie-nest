@@ -5,7 +5,7 @@ import axios from 'axios'
 // Context
 import { useGlobalContext } from '../../context/context'
 
-// Hooks
+import { motion } from 'framer-motion'
 
 // Styles
 import './ImageInfo.css'
@@ -107,7 +107,10 @@ const ImageInfo = ({ movie, getTrailer, id }) => {
   }
 
   return (
-    <div
+    <motion.div
+      initial={{ x: '-100vw' }}
+      animate={{ x: 0 }}
+      transition={{ delay: 0.5, duration: 0.5 }}
       className='info'
       style={{ backgroundImage: `url(${IMG_PATH + backdrop_path})` }}
     >
@@ -120,7 +123,12 @@ const ImageInfo = ({ movie, getTrailer, id }) => {
             : 'img-more-info moreInfoBlackAlpha whiteMovieColor'
         }
       >
-        <div className='img-rating'>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 1 }}
+          className='img-rating'
+        >
           <img
             src={poster_path === null ? url : IMG_PATH + poster_path}
             alt={title}
@@ -154,7 +162,7 @@ const ImageInfo = ({ movie, getTrailer, id }) => {
           )}
 
           {!user && <h5 id='add'>Login to wishlist</h5>}
-        </div>
+        </motion.div>
 
         {/* end of Image + Rating */}
 
@@ -237,7 +245,7 @@ const ImageInfo = ({ movie, getTrailer, id }) => {
 
         {/* end of more-info div */}
       </div>
-    </div>
+    </motion.div>
   )
 }
 
