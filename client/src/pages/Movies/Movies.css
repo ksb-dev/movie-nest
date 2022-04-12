@@ -80,13 +80,6 @@
   color: rgb(240, 244, 248);
 }
 
-@media screen and (max-width: 786px) {
-  .all .one-movie {
-    width: 150px;
-    margin: 0.5rem;
-  }
-}
-
 @media screen and (max-width: 640px) {
   .cat-genre {
     padding-top: 3.5rem;
@@ -95,9 +88,5 @@
 
   .all {
     width: 100vw;
-  }
-
-  .all .one-movie {
-    margin: 0.5rem;
   }
 }

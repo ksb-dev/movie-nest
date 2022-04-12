@@ -68,7 +68,7 @@ const Movies = () => {
                   : 'whiteColorCategory'
               }
             >
-              {category}
+              {category} {filtered.length}
             </span>
           </h4>
         )}
@@ -105,12 +105,6 @@ const Movies = () => {
           <h3 style={{ color: 'tomato' }}>No movies found</h3>
         )}
       </motion.section>
-
-      {/*{!filtered.length == 0 && (
-        <div className='more'>
-          <button onClick={handleClick}>Load More</button>
-        </div>
-      )}*/}
 
       <Pagination
         data={filtered}
