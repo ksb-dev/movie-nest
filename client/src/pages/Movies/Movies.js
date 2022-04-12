@@ -68,10 +68,18 @@ const Movies = () => {
                   : 'whiteColorCategory'
               }
             >
-              {category} {filtered.length}
+              {category}
             </span>
           </h4>
         )}
+
+        <h4
+          className={
+            toggleMode === 'white' ? 'length lightCount' : 'length darkCount'
+          }
+        >
+          {filtered.length}
+        </h4>
       </div>
 
       <motion.section layout className='all'>

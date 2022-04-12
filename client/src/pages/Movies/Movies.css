@@ -1,16 +1,25 @@
 .cat-genre {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 4rem 1rem;
+  padding: 5rem 1rem;
   padding-bottom: 2rem;
 }
 
-.category {
+.category,
+.length {
   text-transform: uppercase;
   margin: 0;
+}
+
+.length {
+  width: 40px;
+  padding: 0.2rem 0.3rem;
+  text-align: center;
+  border-radius: 3px;
+  margin-left: 1rem;
 }
 
 .more {
@@ -62,6 +71,16 @@
 
 .whiteColorCategory {
   color: rgb(240, 244, 248);
+}
+
+.lightCount {
+  background: rgb(13, 37, 63);
+  color: #fff;
+}
+
+.darkCount {
+  background: #fff;
+  color: rgb(13, 37, 63);
 }
 
 .error {

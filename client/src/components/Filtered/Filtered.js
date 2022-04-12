@@ -36,6 +36,12 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
   const [selected, setSelected] = useState('All')
 
   useEffect(() => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    })
+
     if (activeGenre === 0) {
       const films = movies.map(movies => movies)
       setFiltered(films)
