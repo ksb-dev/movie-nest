@@ -4,12 +4,15 @@ import { useParams } from 'react-router-dom'
 // Context
 import { useGlobalContext } from '../../context/context'
 
+// Components
 import Cast from '../../components/Cast/Cast'
 import PersonDetail from '../../components/PersonDetail/PersonDetail'
 import ImageInfo from '../../components/ImageInfo/ImageInfo'
 import Youtube from '../../components/Youtube/Youtube'
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
+
+import { motion } from 'framer-motion'
 
 import './Movie.css'
 
@@ -136,14 +139,20 @@ const Movie = () => {
             trailerUrl={trailerUrl}
           />
 
-          <h6
+          <motion.h6
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 1.5 }}
             className={toggleMode === 'white' ? 'hrlineBlack' : 'hrlineWhite'}
-          ></h6>
+          ></motion.h6>
 
           {/* Overview */}
 
           {overview && (
-            <div
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.5, duration: 1.5 }}
               className={
                 toggleMode === 'white'
                   ? 'overview blackColor'
@@ -152,12 +161,15 @@ const Movie = () => {
             >
               <h3>Overview</h3>
               <h4>{overview}</h4>
-            </div>
+            </motion.div>
           )}
 
-          <h6
+          <motion.h6
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2, duration: 2 }}
             className={toggleMode === 'white' ? 'hrlineBlack' : 'hrlineWhite'}
-          ></h6>
+          ></motion.h6>
 
           {/* Cast */}
 

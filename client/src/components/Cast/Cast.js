@@ -3,6 +3,8 @@ import React, { useRef } from 'react'
 // Hooks
 import { useGlobalContext } from '../../context/context'
 
+import { motion } from 'framer-motion'
+
 // Styles
 import './Cast.css'
 
@@ -33,7 +35,10 @@ const Cast = ({ setPerson, setPersonError, detail, people }) => {
   }
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 2, duration: 2 }}
       className={
         toggleMode === 'white' ? 'cast-div blackColor' : 'cast-div whiteColor'
       }
@@ -72,7 +77,7 @@ const Cast = ({ setPerson, setPersonError, detail, people }) => {
             )
           })}
       </div>
-    </div>
+    </motion.div>
   )
 }
 
