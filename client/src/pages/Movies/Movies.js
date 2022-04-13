@@ -27,9 +27,9 @@ const Movies = () => {
     activeGenre
   } = useGlobalContext()
 
-  useEffect(() => {
+  /*useEffect(() => {
     if (activeGenre === 0) setFiltered(movies)
-  }, [category, page])
+  }, [category, page])*/
 
   const POPULAR = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}`
   const TRENDING = `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&page=${page}`

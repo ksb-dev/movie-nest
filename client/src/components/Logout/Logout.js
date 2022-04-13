@@ -26,6 +26,7 @@ const Logout = ({ log }) => {
     localStorage.removeItem('page')
     localStorage.removeItem('category')
     localStorage.removeItem('genre')
+    localStorage.removeItem('activeGenre')
     setSearchedMovies([])
     setWishlistFiltered([])
     setUser('')

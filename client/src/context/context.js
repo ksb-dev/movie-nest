@@ -28,6 +28,8 @@ const AppProvider = ({ children }) => {
   const [activeGenre, setActiveGenre] = useState(0)
   const [totalPages, setTotalPages] = useState(0)
 
+  let storedActiveGenre = Number(localStorage.getItem('activeGenre'))
+
   useEffect(() => {
     const userName = localStorage.getItem('name')
     if (userName) setUser(userName)
@@ -196,7 +198,8 @@ const AppProvider = ({ children }) => {
         activeGenre,
         setActiveGenre,
         totalPages,
-        setTotalPages
+        setTotalPages,
+        storedActiveGenre
       }}
     >
       {children}

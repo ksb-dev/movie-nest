@@ -61,6 +61,7 @@ const Header = () => {
 
   const handleClick = category => {
     setActiveGenre(0)
+    localStorage.setItem('activeGenre', 0)
     localStorage.setItem('category', category)
     setPage(1)
 
@@ -134,6 +135,7 @@ const Header = () => {
                 />
               )}
             </div>
+
             {(window.location.pathname === '/bookmarks' ||
               window.location.pathname.includes('/movie') ||
               window.location.pathname === '/search') && (

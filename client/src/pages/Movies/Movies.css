@@ -46,6 +46,11 @@
   transition: all 0.3s ease;
 }
 
+.main-side {
+  display: flex;
+  justify-content: center;
+}
+
 .all {
   display: flex;
   flex-wrap: wrap;

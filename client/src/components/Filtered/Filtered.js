@@ -14,10 +14,12 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
     setMore,
     isLoading,
     toggleMode,
-    filtered
+    filtered,
+    storedActiveGenre
   } = useGlobalContext()
 
   const [isActive, setIsActive] = useState(false)
+
   const options = [
     'All',
     'Action',
@@ -36,13 +38,15 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
   const [selected, setSelected] = useState('All')
 
   useEffect(() => {
+    //storedActiveGenre = Number(localStorage.getItem('activeGenre'))
+    //console.log(storedActiveGenre)
     window.scroll({
       top: 0,
       left: 0,
       behavior: 'smooth'
     })
 
-    if (activeGenre === 0) {
+    if (storedActiveGenre === 0) {
       const films = movies.map(movies => movies)
       setFiltered(films)
       const wish = wishlist.map(movies => movies)
@@ -50,7 +54,7 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
       return
     }
 
-    if (activeGenre === 1) {
+    if (storedActiveGenre === 1) {
       const films = []
 
       movies.forEach(film => {
@@ -80,7 +84,7 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
       return
     }
 
-    if (activeGenre === 2) {
+    if (storedActiveGenre === 2) {
       const films = []
 
       movies.forEach(film => {
@@ -110,7 +114,7 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
       return
     }
 
-    if (activeGenre === 3) {
+    if (storedActiveGenre === 3) {
       const films = []
 
       movies.forEach(film => {
@@ -140,7 +144,7 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
       return
     }
 
-    if (activeGenre === 4) {
+    if (storedActiveGenre === 4) {
       const films = []
 
       movies.forEach(film => {
@@ -170,73 +174,61 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
       return
     }
 
-    const filter = movies.filter(movie => movie.genre_ids.includes(activeGenre))
+    const filter = movies.filter(movie =>
+      movie.genre_ids.includes(storedActiveGenre)
+    )
     setFiltered(filter)
 
     const filterWishlist = wishlist.filter(movie =>
-      movie.genre.includes(activeGenre)
+      movie.genre.includes(storedActiveGenre)
     )
     setWishlistFiltered(filterWishlist)
-  }, [activeGenre, more, isLoading])
+  }, [storedActiveGenre, more, isLoading])
 
   const handleClick = genre => {
     if (genre === 'All') {
       setActiveGenre(0)
+      localStorage.setItem('activeGenre', 0)
     } else if (genre === 'Action') {
       setActiveGenre(28)
+      localStorage.setItem('activeGenre', 28)
     } else if (genre === 'Adventure') {
       setActiveGenre(12)
+      localStorage.setItem('activeGenre', 12)
     } else if (genre === 'Animation') {
       setActiveGenre(16)
+      localStorage.setItem('activeGenre', 16)
     } else if (genre === 'Thriller') {
       setActiveGenre(53)
+      localStorage.setItem('activeGenre', 53)
     } else if (genre === 'Comedy') {
       setActiveGenre(35)
+      localStorage.setItem('activeGenre', 35)
     } else if (genre === 'Crime') {
       setActiveGenre(80)
+      localStorage.setItem('activeGenre', 80)
     } else if (genre === 'Drama') {
       setActiveGenre(18)
+      localStorage.setItem('activeGenre', 18)
     } else if (genre === 'Horror') {
       setActiveGenre(27)
+      localStorage.setItem('activeGenre', 27)
     } else if (genre === 'Rating (1 - 9)') {
       setActiveGenre(1)
+      localStorage.setItem('activeGenre', 1)
     } else if (genre === 'Rating (9 - 1)') {
       setActiveGenre(2)
+      localStorage.setItem('activeGenre', 2)
     } else if (genre === 'Title (A - Z)') {
       setActiveGenre(3)
+      localStorage.setItem('activeGenre', 3)
     } else {
       setActiveGenre(4)
+      localStorage.setItem('activeGenre', 4)
     }
   }
 
   return (
-    /*<div className='filtered'>
-      <i
-        className={
-          toggleMode === 'white'
-            ? 'fa-solid fa-filter iconDark'
-            : 'fa-solid fa-filter iconWhite'
-        }
-      ></i>
-      <select
-        ref={dropDown}
-        onClick={handleClick}
-        className={
-          toggleMode === 'white' ? 'select filterDark' : 'select filterLight'
-        }
-      >
-        <option value='0'>All</option>
-        <option value='28'>Action</option>
-        <option value='12'>Adventure</option>
-        <option value='53'>Thriller</option>
-        <option value='35'>Comedy</option>
-        <option value='27'>Horror</option>
-        <option value='1'>Lowest (1 - 9)</option>
-        <option value='2'>Highest (9 - 1)</option>
-        <option value='3'>Ascending (A - Z)</option>
-        <option value='4'>Descending (Z - A)</option>
-      </select>
-    </div>*/
     <div className='dd'>
       <div
         className={

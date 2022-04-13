@@ -39,6 +39,7 @@ export default function Login () {
       localStorage.removeItem('genre')
       localStorage.setItem('mode', 'white')
       localStorage.removeItem('page')
+      localStorage.removeItem('activeGenre')
       loadMovies('popular', 1)
       setSearchedMovies([])
       setSearchTerm('')
