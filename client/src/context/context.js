@@ -29,6 +29,11 @@ const AppProvider = ({ children }) => {
   const [totalPages, setTotalPages] = useState(0)
 
   let storedActiveGenre = Number(localStorage.getItem('activeGenre'))
+  //console.log(storedActiveGenre)
+
+  useEffect(() => {
+    storedActiveGenre = Number(localStorage.getItem('activeGenre'))
+  }, [activeGenre])
 
   useEffect(() => {
     const userName = localStorage.getItem('name')

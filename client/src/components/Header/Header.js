@@ -61,6 +61,7 @@ const Header = () => {
 
   const handleClick = category => {
     setActiveGenre(0)
+    localStorage.setItem('genre', 'All')
     localStorage.setItem('activeGenre', 0)
     localStorage.setItem('category', category)
     setPage(1)

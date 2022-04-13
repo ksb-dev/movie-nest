@@ -38,8 +38,8 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
   const [selected, setSelected] = useState('All')
 
   useEffect(() => {
-    //storedActiveGenre = Number(localStorage.getItem('activeGenre'))
-    //console.log(storedActiveGenre)
+    console.log(storedActiveGenre)
+
     window.scroll({
       top: 0,
       left: 0,
@@ -183,12 +183,13 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
       movie.genre.includes(storedActiveGenre)
     )
     setWishlistFiltered(filterWishlist)
-  }, [storedActiveGenre, more, isLoading])
+  }, [activeGenre, storedActiveGenre, more, isLoading])
 
   const handleClick = genre => {
     if (genre === 'All') {
       setActiveGenre(0)
       localStorage.setItem('activeGenre', 0)
+      setMore(!more)
     } else if (genre === 'Action') {
       setActiveGenre(28)
       localStorage.setItem('activeGenre', 28)
