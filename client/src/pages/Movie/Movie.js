@@ -142,7 +142,7 @@ const Movie = () => {
           <motion.h6
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1.5, duration: 1.5 }}
+            transition={{ delay: 1, duration: 1 }}
             className={toggleMode === 'white' ? 'hrlineBlack' : 'hrlineWhite'}
           ></motion.h6>
 

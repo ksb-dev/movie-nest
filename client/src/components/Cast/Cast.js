@@ -38,12 +38,12 @@ const Cast = ({ setPerson, setPersonError, detail, people }) => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ delay: 2, duration: 2 }}
+      transition={{ delay: 1, duration: 1 }}
       className={
         toggleMode === 'white' ? 'cast-div blackColor' : 'cast-div whiteColor'
       }
     >
-      <h3>Cast</h3>
+      {people && <h3>Cast</h3>}
       <div
         className={
           toggleMode === 'white'
