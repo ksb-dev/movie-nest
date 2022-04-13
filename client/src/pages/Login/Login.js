@@ -33,7 +33,6 @@ export default function Login () {
 
   useEffect(() => {
     if (user) {
-      navigate('/')
       localStorage.removeItem('term')
       localStorage.setItem('mode', 'white')
       localStorage.removeItem('genre')
@@ -43,6 +42,7 @@ export default function Login () {
       loadMovies('popular', 1)
       setSearchedMovies([])
       setSearchTerm('')
+      navigate('/')
       window.location.reload()
     }
   }, [user, navigate])
