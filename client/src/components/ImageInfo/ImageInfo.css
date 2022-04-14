@@ -230,6 +230,7 @@
 
   .info .img-more-info .img-rating img {
     width: 150px;
+    height: 100%;
   }
 
   .info .img-more-info .img-rating #add,

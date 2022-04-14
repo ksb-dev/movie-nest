@@ -1,5 +1,8 @@
 import React, { useRef } from 'react'
 
+// Components
+import Person from '../Person/Person'
+
 // Hooks
 import { useGlobalContext } from '../../context/context'
 
@@ -7,8 +10,6 @@ import { motion } from 'framer-motion'
 
 // Styles
 import './Cast.css'
-
-const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
 
 const Cast = ({ setPerson, setPersonError, detail, people }) => {
   const { toggleMode } = useGlobalContext()
@@ -30,8 +31,9 @@ const Cast = ({ setPerson, setPersonError, detail, people }) => {
     }
   }
 
-  const show = () => {
-    charName.current.style.display = 'none'
+  const hide = () => {
+    charName.current.style.background = 'white'
+    console.log(charName.current)
   }
 
   return (
@@ -56,24 +58,15 @@ const Cast = ({ setPerson, setPersonError, detail, people }) => {
             const { profile_path, character, original_name, id } = person
 
             return (
-              <div className='actor-img-name' key={id}>
-                {profile_path && character && original_name && (
-                  <>
-                    <img
-                      src={IMG_PATH + profile_path}
-                      alt=''
-                      className='person-img'
-                      onClick={() => getPersonDetail(id)}
-                      onMouseOver={show}
-                    />
-
-                    <div ref={charName} className='character-name'>
-                      <h6>{character}</h6>
-                      <h5>{original_name}</h5>
-                    </div>
-                  </>
-                )}
-              </div>
+              <Person
+                key={id}
+                profile_path={profile_path}
+                character={character}
+                original_name={original_name}
+                toggleMode={toggleMode}
+                getPersonDetail={getPersonDetail}
+                id={id}
+              />
             )
           })}
       </div>

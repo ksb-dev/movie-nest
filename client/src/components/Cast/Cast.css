@@ -12,66 +12,21 @@
 }
 
 .cast-div .section-center {
+  width: 100%;
   display: flex;
-  align-items: center;
-  overflow: auto;
+  align-items: flex-start;
+  overflow-x: scroll;
+  overflow-y: hidden;
   letter-spacing: 1px;
   padding: 1rem;
   padding-left: 0rem;
   border-radius: 3px;
-  margin-left: -0.5rem;
-}
-
-.cast-div .section-center .actor-img-name {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 0 0.5rem;
-}
-
-.cast-div .section-center .actor-img-name .person-img {
-  height: 350px;
-  object-fit: cover;
-  border-radius: 3px;
-  cursor: pointer;
-  box-shadow: 1px 1px 5px #000;
-}
-
-.cast-div .section-center .actor-img-name .person-img:hover {
-  box-shadow: 2px 2px 10px #000;
-  transition: box-shadow 0.3s ease;
-}
-
-.cast-div .section-center .actor-img-name .character-name {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  background: rgba(0, 0, 0, 0.9);
-  width: 100%;
-  color: #fff;
-  padding: 0.5rem;
-  border-radius: 0 0 3px 3px;
-  letter-spacing: 2px;
-}
-
-.cast-div .section-center .actor-img-name .character-name h6 {
-  font-size: 0.7rem;
-  font-weight: 500;
 }
 
 @media screen and (max-width: 1280px) {
   .cast-div {
     width: 100vw;
     padding: 1rem 4rem;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .cast-div .section-center .actor-img-name .person-img {
-    height: 300px;
   }
 }
 
@@ -82,19 +37,6 @@
 
   .cast-div h3 {
     font-size: 1rem;
-  }
-
-  .cast-div .section-center .actor-img-name .person-img {
-    height: 250px;
-  }
-
-  .cast-div .section-center .actor-img-name .character-name h6 {
-    font-size: 0.5rem;
-    font-weight: 400;
-  }
-  .cast-div .section-center .actor-img-name .character-name h5 {
-    font-size: 0.6rem;
-    font-weight: 500;
   }
 }
 
@@ -115,22 +57,16 @@
   .cast-div .section-center {
     width: 90vw;
     margin: 0 auto;
+    padding: 0.5rem;
   }
+}
 
-  .cast-div .section-center .actor-img-name {
-    margin: 0.2rem;
-  }
+.darkCastBg {
+  background: #001124;
+  color: #fff;
+}
 
-  .cast-div .section-center .actor-img-name .person-img {
-    height: 200px;
-  }
-
-  .cast-div .section-center .actor-img-name .character-name h6 {
-    font-size: 0.5rem;
-    font-weight: 300;
-  }
-  .cast-div .section-center .actor-img-name .character-name h5 {
-    font-size: 0.6rem;
-    font-weight: 400;
-  }
+.lightCastBg {
+  background: rgb(220, 220, 220);
+  color: rgb(13, 37, 63);
 }
