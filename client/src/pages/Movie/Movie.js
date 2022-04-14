@@ -162,7 +162,7 @@ const Movie = () => {
             >
               <h3>Overview</h3>
               <h4>
-                {!read && overview.substring(0, 250) + '...'}
+                {!read && overview.substring(0, 250)}
 
                 {!read && overview.length > 250 && (
                   <span onClick={() => setRead(true)}>
