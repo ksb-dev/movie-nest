@@ -23,6 +23,7 @@ const Movie = () => {
   const [people, setPeople] = useState([])
   const [person, setPerson] = useState({})
   const [personError, setPersonError] = useState(false)
+  const [read, setRead] = useState(false)
 
   const {
     toggleMode,
@@ -160,7 +161,25 @@ const Movie = () => {
               }
             >
               <h3>Overview</h3>
-              <h4>{overview}</h4>
+              <h4>
+                {!read && overview.substring(0, 250) + '...'}
+
+                {!read && overview.length > 250 && (
+                  <span onClick={() => setRead(true)}>
+                    {' '}
+                    read more <i class='fa-solid fa-plus'></i>
+                  </span>
+                )}
+
+                {read && overview}
+
+                {read && overview.length > 250 && (
+                  <span onClick={() => setRead(false)}>
+                    {' '}
+                    hide more <i class='fa-solid fa-minus'></i>
+                  </span>
+                )}
+              </h4>
             </motion.div>
           )}
 

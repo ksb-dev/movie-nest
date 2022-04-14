@@ -63,6 +63,12 @@
   letter-spacing: 2px;
 }
 
+.full-page .single-movie .overview h4 span {
+  color: #01b4e4;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .full-page .green {
   border: 2px solid green;
   padding: 0.2rem 0.5rem;
