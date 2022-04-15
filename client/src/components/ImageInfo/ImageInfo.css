@@ -193,6 +193,7 @@
 
   .info .img-more-info .more-info .title {
     font-size: 1.2rem;
+    text-align: end;
   }
 
   .info .img-more-info .more-info #tagline {
@@ -243,7 +244,7 @@
   }
 
   .info .img-more-info .more-info #tagline {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     padding: 0.2rem 0.5rem;
   }
 
@@ -275,8 +276,13 @@
     padding: 1rem;
   }
 
+  .info .img-more-info .more-info .title {
+    text-align: start;
+    font-weight: 500;
+  }
+
   .info .img-more-info .more-info #tagline {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     margin-top: 0.2rem;
     margin-bottom: 1rem;
   }
@@ -300,6 +306,7 @@
   }
 
   .info .img-more-info .more-info .genre-div #genre {
+    font-weight: 500;
     margin: 0.5rem 0.5rem 0 0;
   }
 }
