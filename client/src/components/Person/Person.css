@@ -57,6 +57,12 @@
   border-radius: 3px;
 }
 
+.card .content .back h4,
+.card .content .back h5 {
+  margin: 0;
+  font-weight: 500;
+}
+
 .per .darkCastBg {
   background: #001124;
   color: #fff;
@@ -86,15 +92,27 @@
 
 @media screen and (max-width: 786px) {
   .card {
+    width: 200px;
+    height: 250px;
+  }
+
+  .card .content .back {
+    padding: 0.5rem;
+  }
+
+  .card .content .back h4,
+  .card .content .back h5 {
+    font-weight: 400;
+  }
+
+  .person-img {
+    padding: 0.2rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .card {
     width: 150px;
     height: 200px;
-  }
-
-  .card .content .back h4 {
-    font-size: 0.8rem;
-  }
-
-  .card .content .back h5 {
-    font-size: 0.7rem;
   }
 }

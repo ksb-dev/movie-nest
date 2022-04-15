@@ -26,7 +26,7 @@
   border-radius: 3px;
   text-align: center;
   cursor: pointer;
-  margin-top: 0.5rem;
+  margin-top: 0.2rem;
   box-shadow: 1px 1px 5px #000;
   letter-spacing: 1px;
 }
@@ -189,7 +189,6 @@
   .info .img-more-info .img-rating #add,
   .info .img-more-info .img-rating #remove {
     width: 250px;
-    padding: 0.2rem;
   }
 
   .info .img-more-info .more-info .title {
@@ -201,12 +200,12 @@
   }
 
   .info .img-more-info .more-info .genre-div #genre {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     font-weight: 600;
   }
 
   .info .img-more-info .more-info h5 {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 600;
   }
 
@@ -215,7 +214,7 @@
   .info .img-more-info .more-info .language,
   .info .img-more-info .more-info .vote {
     font-weight: 500;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 
   .info .img-more-info .more-info .trailer-btn {
@@ -229,14 +228,13 @@
   }
 
   .info .img-more-info .img-rating img {
-    width: 150px;
+    width: 200px;
     height: 100%;
   }
 
   .info .img-more-info .img-rating #add,
   .info .img-more-info .img-rating #remove {
-    width: 150px;
-    padding: 0.2rem;
+    width: 200px;
   }
 
   .info .img-more-info .more-info .title {
@@ -249,13 +247,13 @@
   }
 
   .info .img-more-info .more-info .genre-div #genre {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     font-weight: 600;
     padding: 0.1rem 0.2rem;
   }
 
   .info .img-more-info .more-info h5 {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     font-weight: 600;
   }
 
@@ -264,19 +262,25 @@
   .info .img-more-info .more-info .language,
   .info .img-more-info .more-info .vote {
     font-weight: 500;
-    font-size: 0.6rem;
+    font-size: 0.7rem;
   }
 
   .info .img-more-info .more-info .trailer-btn {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 }
 
 @media only screen and (max-width: 640px) {
   .info .img-more-info {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    padding: 1rem;
+  }
+
+  .info .img-more-info .more-info #tagline {
+    font-size: 0.7rem;
+    margin-bottom: 1rem;
   }
 
   .info .img-more-info .img-rating {
@@ -287,6 +291,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
+    margin-top: 2rem;
   }
 
   .info .img-more-info .more-info .genre-div {
