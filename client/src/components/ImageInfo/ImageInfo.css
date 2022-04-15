@@ -244,6 +244,7 @@
   .info .img-more-info .img-rating #add,
   .info .img-more-info .img-rating #remove {
     width: 200px;
+    padding: 0.3rem;
   }
 
   .info .img-more-info .more-info .title {
