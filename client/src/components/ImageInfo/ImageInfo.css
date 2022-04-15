@@ -97,6 +97,10 @@
   margin-right: 2rem;
 }
 
+.info .img-more-info .more-info .title {
+  text-align: end;
+}
+
 .info .img-more-info .more-info #tagline {
   font-weight: 500;
   margin-bottom: 2rem;
@@ -182,6 +186,10 @@
 }
 
 @media only screen and (max-width: 1024px) {
+  .info .img-more-info {
+    padding: 1rem;
+  }
+
   .info .img-more-info .img-rating img {
     width: 250px;
   }

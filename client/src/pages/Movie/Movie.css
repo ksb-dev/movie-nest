@@ -115,6 +115,12 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .full-page .single-movie .overview {
+    padding: 2rem;
+  }
+}
+
 @media screen and (max-width: 786px) {
   .full-page .single-movie .overview {
     padding: 1rem 2rem;
