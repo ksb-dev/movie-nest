@@ -2,6 +2,8 @@ import React, { useRef } from 'react'
 
 import './Person.css'
 
+const url =
+  'https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png'
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
 
 const Person = ({
@@ -15,11 +17,12 @@ const Person = ({
   const charName = useRef(null)
 
   const show = () => {
-    charName.current.style.transform = 'translateY(0%)'
+    charName !== null && (charName.current.style.transform = 'translateY(0%)')
   }
 
   const hide = () => {
-    charName.current.style.transform = 'translateY(-110%)'
+    charName !== null &&
+      (charName.current.style.transform = 'translateY(-110%)')
   }
 
   return (
@@ -33,9 +36,13 @@ const Person = ({
       onMouseOver={show}
       onMouseLeave={hide}
     >
-      {profile_path && character && original_name && (
+      {character && original_name && (
         <>
-          <img src={IMG_PATH + profile_path} alt='' className='person-img' />
+          <img
+            src={profile_path === null ? url : IMG_PATH + profile_path}
+            alt=''
+            className='person-img'
+          />
 
           <div
             ref={charName}

@@ -98,10 +98,10 @@
 }
 
 .info .img-more-info .more-info #tagline {
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 2rem;
+  padding: 0.5rem 1rem;
   border-radius: 3px;
-  padding: 0.2rem 0.5rem;
   text-align: center;
 }
 
@@ -129,7 +129,7 @@
   margin-left: 0.5rem;
   padding: 0.2rem 0.5rem;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
   border-radius: 3px;
 }
 
@@ -201,7 +201,7 @@
 
   .info .img-more-info .more-info .genre-div #genre {
     font-size: 0.8rem;
-    font-weight: 500;
+    font-weight: 600;
   }
 
   .info .img-more-info .more-info h5 {
@@ -244,11 +244,21 @@
 
   .info .img-more-info .more-info #tagline {
     font-size: 0.6rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .info .img-more-info .more-info .genre-div {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-wrap: wrap;
   }
 
   .info .img-more-info .more-info .genre-div #genre {
     font-size: 0.8rem;
-    font-weight: 500;
+    font-weight: 600;
+    padding: 0.1rem 0.3rem;
+    margin-top: 0.2rem;
   }
 
   .info .img-more-info .more-info .trailer-btn {
@@ -267,6 +277,7 @@
 
   .info .img-more-info .more-info #tagline {
     font-size: 0.7rem;
+    margin-top: 0.2rem;
     margin-bottom: 1rem;
   }
 
@@ -283,6 +294,8 @@
 
   .info .img-more-info .more-info .genre-div {
     display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
     flex-wrap: wrap;
   }
 
@@ -308,13 +321,13 @@
 }
 
 .whiteGenre {
-  background: rgb(13, 37, 63);
-  color: #fff;
+  color: rgb(13, 37, 63);
+  border: 2px solid rgb(13, 37, 63);
 }
 
 .blackGenre {
-  background: #fff;
-  color: rgb(13, 37, 63);
+  color: #fff;
+  border: 2px solid #fff;
 }
 
 .whiteBtn {
