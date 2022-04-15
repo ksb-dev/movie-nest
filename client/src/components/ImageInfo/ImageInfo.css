@@ -129,7 +129,7 @@
   margin-left: 0.5rem;
   padding: 0.2rem 0.5rem;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
   border-radius: 3px;
 }
 
@@ -201,12 +201,12 @@
 
   .info .img-more-info .more-info .genre-div #genre {
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   .info .img-more-info .more-info h5 {
     font-size: 0.9rem;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   .info .img-more-info .more-info .release,
@@ -214,7 +214,7 @@
   .info .img-more-info .more-info .language,
   .info .img-more-info .more-info .vote {
     font-weight: 500;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 
   .info .img-more-info .more-info .trailer-btn {
@@ -248,20 +248,7 @@
 
   .info .img-more-info .more-info .genre-div #genre {
     font-size: 0.8rem;
-    font-weight: 600;
-  }
-
-  .info .img-more-info .more-info h5 {
-    font-size: 0.8rem;
-    font-weight: 600;
-  }
-
-  .info .img-more-info .more-info .release,
-  .info .img-more-info .more-info .runtime,
-  .info .img-more-info .more-info .language,
-  .info .img-more-info .more-info .vote {
     font-weight: 500;
-    font-size: 0.7rem;
   }
 
   .info .img-more-info .more-info .trailer-btn {
@@ -321,13 +308,13 @@
 }
 
 .whiteGenre {
-  color: rgb(13, 37, 63);
-  border: 2px solid rgb(13, 37, 63);
+  background: rgb(13, 37, 63);
+  color: #fff;
 }
 
 .blackGenre {
-  color: #fff;
-  border: 2px solid #fff;
+  background: #fff;
+  color: rgb(13, 37, 63);
 }
 
 .whiteBtn {
