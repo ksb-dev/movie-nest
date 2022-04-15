@@ -2,6 +2,8 @@ import React, { useRef } from 'react'
 
 import './Person.css'
 
+const url =
+  'https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png'
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
 
 const Person = ({
@@ -14,48 +16,42 @@ const Person = ({
 }) => {
   const charName = useRef(null)
 
-  const show = () => {
-    charName.current.style.transform = 'translateY(0%)'
-  }
-
-  const hide = () => {
-    charName.current.style.transform = 'translateY(-110%)'
-  }
-
   return (
-    <div
-      className={
-        toggleMode === 'white'
-          ? 'actor-img-name lightCastBg'
-          : 'actor-img-name darkCastBg'
-      }
-      key={id}
-      onMouseOver={show}
-      onMouseLeave={hide}
-    >
-      {profile_path && character && original_name && (
+    <div className='card'>
+      <div
+        className={
+          toggleMode === 'white' ? 'content lightCastBg' : 'content darkCastBg'
+        }
+        key={id}
+        //onMouseOver={show}
+        //onMouseLeave={hide}
+      >
         <>
-          <img src={IMG_PATH + profile_path} alt='' className='person-img' />
+          <div className='front'>
+            <img
+              src={profile_path === null ? url : IMG_PATH + profile_path}
+              alt={original_name}
+              className='person-img'
+            />
+          </div>
 
           <div
             ref={charName}
             className={
-              toggleMode === 'white'
-                ? 'character-name lightCastBg'
-                : 'character-name darkCastBg'
+              toggleMode === 'white' ? 'back lightCastBg' : 'back darkCastBg'
             }
           >
-            <h5>{character}</h5>
+            <h5>{character && character}</h5>
             <p
               onClick={() => getPersonDetail(id)}
               className={toggleMode === 'white' ? 'darkBio' : 'lightBio'}
             >
               Biography
             </p>
-            <h4>{original_name}</h4>
+            <h4>{original_name && original_name}</h4>
           </div>
         </>
-      )}
+      </div>
     </div>
   )
 }

@@ -58,15 +58,16 @@ const Cast = ({ setPerson, setPersonError, detail, people }) => {
             const { profile_path, character, original_name, id } = person
 
             return (
-              <Person
-                key={id}
-                profile_path={profile_path}
-                character={character}
-                original_name={original_name}
-                toggleMode={toggleMode}
-                getPersonDetail={getPersonDetail}
-                id={id}
-              />
+              <div className='person-div' key={id}>
+                <Person
+                  profile_path={profile_path}
+                  character={character}
+                  original_name={original_name}
+                  toggleMode={toggleMode}
+                  getPersonDetail={getPersonDetail}
+                  id={id}
+                />
+              </div>
             )
           })}
       </div>

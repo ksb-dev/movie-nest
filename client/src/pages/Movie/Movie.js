@@ -167,7 +167,7 @@ const Movie = () => {
                 {!read && overview.length > 250 && (
                   <span onClick={() => setRead(true)}>
                     {' '}
-                    read more <i class='fa-solid fa-plus'></i>
+                    read more <i className='fa-solid fa-plus'></i>
                   </span>
                 )}
 
@@ -176,7 +176,7 @@ const Movie = () => {
                 {read && overview.length > 250 && (
                   <span onClick={() => setRead(false)}>
                     {' '}
-                    hide more <i class='fa-solid fa-minus'></i>
+                    hide more <i className='fa-solid fa-minus'></i>
                   </span>
                 )}
               </h4>
