@@ -84,10 +84,11 @@
 
 .darkSearch {
   background: rgb(13, 37, 63);
+  background: #001124;
 }
 
 .lightSearch {
-  background: #fff;
+  background: rgb(220, 220, 220);
 }
 
 .darkColorSearch {
