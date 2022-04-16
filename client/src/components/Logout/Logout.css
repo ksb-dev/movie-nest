@@ -34,12 +34,12 @@
   transition: all 0.3s ease;
 }
 
-.dark {
+.light {
   background: rgba(13, 37, 63);
   color: #fff;
 }
 
-.light {
+.dark {
   background: rgba(255, 255, 255);
   color: #0d253f;
 }
