@@ -89,12 +89,12 @@
 }
 
 .darkCastBg {
-  background: #001124;
+  background: rgb(13, 37, 63);
   color: #fff;
 }
 
 .lightCastBg {
-  background: rgb(220, 220, 220);
+  background: #fff;
   color: rgb(13, 37, 63);
 }
 

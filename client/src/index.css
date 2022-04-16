@@ -128,13 +128,13 @@ p {
 /* section */
 .section {
   margin: 0 auto;
-  max-width: var(--max-width);
+  /* max-width: var(--max-width);*/
 }
 
 @media screen and (min-width: 992px) {
-  .section {
+  /*.section {
     width: 95vw;
-  }
+  }*/
 }
 /*
 =============== 
@@ -286,15 +286,17 @@ Single Movie
 
 .black {
   background: rgb(13, 37, 63);
+  background: #001124;
 }
 
 .white {
   background: #fff;
+  background: rgb(220, 220, 220);
 }
 
 ::-webkit-scrollbar {
   width: 10px;
-  height: 6px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-button:start:decrement,
@@ -309,11 +311,11 @@ Single Movie
 }
 
 ::-webkit-scrollbar-thumb:vertical {
-  background-color: grey;
+  background-color: tomato;
   border-radius: 20px;
 }
 
 ::-webkit-scrollbar-thumb:horizontal {
-  background-color: black;
+  background-color: tomato;
   border-radius: 20px;
 }

@@ -34,8 +34,8 @@ const Footer = () => {
     <div
       className={
         toggleMode === 'white'
-          ? 'footer footerWhiteBackground footerWhiteColor'
-          : 'footer footerBlackBackground footerBlackColor'
+          ? 'footer footerBlackBackground footerBlackColor'
+          : 'footer footerWhiteBackground footerWhiteColor'
       }
     >
       <h1 className='name' onClick={() => handleClick('popular')}>

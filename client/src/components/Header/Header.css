@@ -156,11 +156,11 @@
 }
 
 .headerWhiteBg {
-  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 1);
 }
 
 .headerBlackBg {
-  background: rgb(13, 37, 63);
+  background: rgba(13, 37, 63, 1);
 }
 
 .headerBlackColor {

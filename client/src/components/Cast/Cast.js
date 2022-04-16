@@ -7,6 +7,7 @@ import Person from '../Person/Person'
 import { useGlobalContext } from '../../context/context'
 
 import { motion } from 'framer-motion'
+import ScrollContainer from 'react-indiana-drag-scroll'
 
 // Styles
 import './Cast.css'
@@ -46,31 +47,33 @@ const Cast = ({ setPerson, setPersonError, detail, people }) => {
       }
     >
       {people && <h3>Cast</h3>}
-      <div
-        className={
-          toggleMode === 'white'
-            ? 'section-center blackColor'
-            : 'section-center whiteColor'
-        }
-      >
-        {people &&
-          people.map(person => {
-            const { profile_path, character, original_name, id } = person
+      <ScrollContainer>
+        <div
+          className={
+            toggleMode === 'white'
+              ? 'section-center blackColor'
+              : 'section-center whiteColor'
+          }
+        >
+          {people &&
+            people.map(person => {
+              const { profile_path, character, original_name, id } = person
 
-            return (
-              <div className='person-div' key={id}>
-                <Person
-                  profile_path={profile_path}
-                  character={character}
-                  original_name={original_name}
-                  toggleMode={toggleMode}
-                  getPersonDetail={getPersonDetail}
-                  id={id}
-                />
-              </div>
-            )
-          })}
-      </div>
+              return (
+                <div className='person-div' key={id}>
+                  <Person
+                    profile_path={profile_path}
+                    character={character}
+                    original_name={original_name}
+                    toggleMode={toggleMode}
+                    getPersonDetail={getPersonDetail}
+                    id={id}
+                  />
+                </div>
+              )
+            })}
+        </div>
+      </ScrollContainer>
     </motion.div>
   )
 }

@@ -71,9 +71,11 @@
 .filterDark {
   background: #0d253f;
   color: #fff;
+  box-shadow: 0 0 2px #fff;
 }
 
 .filterLight {
   background: #fff;
   color: #0d253f;
+  box-shadow: 0 0 2px #0d253f;
 }

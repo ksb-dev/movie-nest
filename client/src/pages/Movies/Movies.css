@@ -16,10 +16,12 @@
 
 .length {
   width: 40px;
-  padding: 0.2rem 0.3rem;
-  text-align: center;
-  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
   margin-left: 1rem;
+  padding: 0.2rem 0;
 }
 
 .more {
@@ -86,6 +88,14 @@
 .darkCount {
   background: #fff;
   color: rgb(13, 37, 63);
+}
+
+.movieInfoWhiteShadow {
+  box-shadow: 0 0 2px #fff;
+}
+
+.movieInfoBlackShadow {
+  box-shadow: 0 0 2px rgb(13, 37, 63);
 }
 
 .error {

@@ -94,10 +94,12 @@
 
 .blackAlpha {
   background: rgba(13, 37, 63, 1);
+  background: #001124;
 }
 
 .whiteAlpha {
   background: (255, 255, 255, 1);
+  background: rgba(220, 220, 220, 1);
 }
 
 .blackColor {

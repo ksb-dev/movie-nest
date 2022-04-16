@@ -45,63 +45,52 @@ const Pagination = ({ data, pageLimit, dataLimit, handleClick }) => {
 
   return (
     <div>
-      {/* show the posts, 10 posts at a time */}
-      {/*<div className="dataContainer">
-      {getPaginatedData().map((d, idx) => (
-        <RenderComponent key={idx} data={d} />
-      ))}
-      </div>*/}
-
-      {/* show the pagiantion
-        it consists of next and previous buttons
-        along with page numbers, in our case, 5 page
-        numbers at a time
-    */}
-      <div
-        className={toggleMode === 'white' ? 'pagination dbg' : 'pagination lbg'}
-      >
+      <div className={toggleMode === 'white' ? 'pagination' : 'pagination'}>
         {/* previous button */}
-        <button
-          onClick={goToPreviousPage}
-          className={
-            toggleMode === 'white'
-              ? ` ${number === 1 ? 'disabled' : 'prevNextLight'}`
-              : ` ${number === 1 ? 'disabled' : 'prevNextDark'}`
-          }
-        >
-          <i className='fa-solid fa-circle-chevron-left fa-2x'></i>
-        </button>
-
-        {/* show page numbers */}
-        {getPaginationGroup().map((item, index) => (
+        <div className={toggleMode === 'white' ? 'inner lbg' : 'inner dbg'}>
           <button
-            key={index}
-            onClick={changePage}
+            onClick={goToPreviousPage}
             className={
               toggleMode === 'white'
-                ? `paginationItem  ${
-                    number === item ? 'lightActive' : 'lightNumber'
-                  }`
-                : `paginationItem  ${
-                    number === item ? 'darkActive' : 'darkNumber'
-                  }`
+                ? ` ${number === 1 ? 'disabled' : 'prevNextDark'}`
+                : ` ${number === 1 ? 'disabled' : 'prevNextLight'}`
             }
           >
-            <span>{item}</span>
+            <i className='fa-solid fa-circle-chevron-up fa-2x'></i>
           </button>
-        ))}
 
-        {/* next button */}
-        <button
-          onClick={goToNextPage}
-          className={
-            toggleMode === 'white'
-              ? ` ${number === pages ? 'prevNextLight' : 'prevNextLight'}`
-              : ` ${number === pages ? 'prevNextDark' : 'prevNextDark'}`
-          }
-        >
-          <i className='fa-solid fa-circle-chevron-right fa-2x'></i>
-        </button>
+          {/* show page numbers */}
+
+          {getPaginationGroup().map((item, index) => (
+            <button
+              key={index}
+              onClick={changePage}
+              className={
+                toggleMode === 'white'
+                  ? `paginationItem  ${
+                      number === item ? 'darkActive' : 'darkNumber'
+                    } `
+                  : `paginationItem  ${
+                      number === item ? 'lightActive' : 'lightNumber'
+                    } `
+              }
+            >
+              <span>{item}</span>
+            </button>
+          ))}
+
+          {/* next button */}
+          <button
+            onClick={goToNextPage}
+            className={
+              toggleMode === 'white'
+                ? ` ${number === pages ? 'prevNextDark' : 'prevNextDark'}`
+                : ` ${number === pages ? 'prevNextLight' : 'prevNextLight'}`
+            }
+          >
+            <i className='fa-solid fa-circle-chevron-down fa-2x'></i>
+          </button>
+        </div>
       </div>
     </div>
   )

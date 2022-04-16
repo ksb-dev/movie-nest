@@ -38,8 +38,6 @@ const Filtered = ({ activeGenre, setActiveGenre }) => {
   const [selected, setSelected] = useState('All')
 
   useEffect(() => {
-    console.log(storedActiveGenre)
-
     window.scroll({
       top: 0,
       left: 0,

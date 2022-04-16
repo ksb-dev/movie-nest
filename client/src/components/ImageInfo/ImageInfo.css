@@ -323,10 +323,12 @@
 
 .moreInfoBlackAlpha {
   background: rgba(13, 37, 63, 0.9);
+  background: rgba(0, 17, 36, 0.9);
 }
 
 .moreInfoWhiteAlpha {
   background: rgba(255, 255, 255, 0.9);
+  background: rgba(220, 220, 220, 0.9);
 }
 
 .blackMovieColor {

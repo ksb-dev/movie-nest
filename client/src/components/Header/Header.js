@@ -11,6 +11,8 @@ import Filtered from '../Filtered/Filtered'
 // Styles
 import './Header.css'
 
+//const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
+
 const Header = () => {
   const {
     toggleMode,
@@ -120,8 +122,8 @@ const Header = () => {
       <div
         className={
           toggleMode === 'white'
-            ? 'header headerBlackBg headerWhiteColor'
-            : 'header headerWhiteBg headerBlackColor'
+            ? 'header headerWhiteBg headerWhiteColor'
+            : 'header headerBlackBg headerBlackColor'
         }
       >
         <div className='name-mode-menu'>
@@ -145,8 +147,8 @@ const Header = () => {
                   to='/'
                   className={
                     toggleMode === 'white'
-                      ? 'headerWhiteColor'
-                      : 'headerBlackColor'
+                      ? 'headerBlackColor'
+                      : 'headerWhiteColor'
                   }
                 >
                   <i className='fa-solid fa-house'></i>
@@ -160,15 +162,15 @@ const Header = () => {
                 to='/search'
                 className={
                   toggleMode === 'white'
-                    ? 'headerWhiteColor'
-                    : 'headerBlackColor'
+                    ? 'headerBlackColor'
+                    : 'headerWhiteColor'
                 }
               >
                 <i
                   className={
                     toggleMode === 'white'
-                      ? 'fa-solid fa-magnifying-glass headerWhiteColor'
-                      : 'fa-solid fa-magnifying-glass headerBlackColor'
+                      ? 'fa-solid fa-magnifying-glass headerBlackColor'
+                      : 'fa-solid fa-magnifying-glass headerWhiteColor'
                   }
                 ></i>
                 <span>Search</span>
@@ -177,18 +179,18 @@ const Header = () => {
 
             {toggleMode === 'white' ? (
               <p
-                className='mode headerWhiteColor'
+                className='mode headerBlackColor'
                 onClick={() => toggle(toggleMode)}
               >
-                <i className='fa-solid fa-moon headerWhiteColor'></i>
+                <i className='fa-solid fa-moon headerBlackColor'></i>
                 <span>Dark</span>
               </p>
             ) : (
               <p
-                className='mode headerBlackColor'
+                className='mode headerWhiteColor'
                 onClick={() => toggle(toggleMode)}
               >
-                <i className='fa-solid fa-sun headerBlackColor'></i>
+                <i className='fa-solid fa-sun headerWhiteColor'></i>
                 <span>Light</span>
               </p>
             )}
@@ -199,15 +201,15 @@ const Header = () => {
                   to='/login'
                   className={
                     toggleMode === 'white'
-                      ? 'headerWhiteColor'
-                      : 'headerBlackColor'
+                      ? 'headerBlackColor'
+                      : 'headerWhiteColor'
                   }
                 >
                   <i
                     className={
                       toggleMode === 'white'
-                        ? 'fa-solid fa-circle-user headerWhiteColor'
-                        : 'fa-solid fa-circle-user headerBlackColor'
+                        ? 'fa-solid fa-circle-user headerBlackColor'
+                        : 'fa-solid fa-circle-user headerWhiteColor'
                     }
                   ></i>
                   <span>Login</span>
@@ -221,15 +223,15 @@ const Header = () => {
                   to='#'
                   className={
                     toggleMode === 'white'
-                      ? 'headerWhiteColor'
-                      : 'headerBlackColor'
+                      ? 'headerBlackColor'
+                      : 'headerWhiteColor'
                   }
                 >
                   <i
                     className={
                       toggleMode === 'white'
-                        ? 'fa-solid fa-circle-user headerWhiteColor'
-                        : 'fa-solid fa-circle-user headerBlackColor'
+                        ? 'fa-solid fa-circle-user headerBlackColor'
+                        : 'fa-solid fa-circle-user headerWhiteColor'
                     }
                   ></i>
                   <span>{userName}</span>
@@ -241,8 +243,8 @@ const Header = () => {
               <i
                 className={
                   toggleMode === 'white'
-                    ? 'fa fa-bars-staggered headerWhiteColor'
-                    : 'fa fa-bars-staggered headerBlackColor'
+                    ? 'fa fa-bars-staggered headerBlackColor'
+                    : 'fa fa-bars-staggered headerWhiteColor'
                 }
               ></i>
             </p>

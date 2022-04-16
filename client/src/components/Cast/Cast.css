@@ -65,13 +65,3 @@
     padding: 0.5rem;
   }
 }
-
-.darkCastBg {
-  background: #001124;
-  color: #fff;
-}
-
-.lightCastBg {
-  background: rgb(220, 220, 220);
-  color: rgb(13, 37, 63);
-}

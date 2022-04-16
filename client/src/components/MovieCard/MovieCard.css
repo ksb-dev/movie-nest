@@ -148,11 +148,12 @@
 }
 
 .movieInfoWhiteBg {
-  background: #001124;
+  background: rgb(13, 37, 63);
 }
 
 .movieInfoBlackBg {
   background: rgb(220, 220, 220);
+  background: #fff;
 }
 
 .darkTitle {

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 // Context
 import { useGlobalContext } from '../../context/context'
@@ -21,15 +21,8 @@ const Movies = () => {
     toggleMode,
     fetchMovies,
     page,
-    filtered,
-    setFiltered,
-    movies,
-    activeGenre
+    filtered
   } = useGlobalContext()
-
-  /*useEffect(() => {
-    if (storedActiveGenre === 0) setFiltered(movies)
-  }, [storedActiveGenre])*/
 
   const POPULAR = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}`
   const TRENDING = `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&page=${page}`
