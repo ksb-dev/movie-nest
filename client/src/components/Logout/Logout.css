@@ -37,11 +37,13 @@
 .light {
   background: rgba(13, 37, 63);
   color: #fff;
+  box-shadow: 0 0 5px #fff;
 }
 
 .dark {
   background: rgba(255, 255, 255);
   color: #0d253f;
+  box-shadow: 0 0 5px #0d253f;
 }
 
 .darker {
