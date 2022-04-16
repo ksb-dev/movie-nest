@@ -91,6 +91,14 @@
   background: rgb(220, 220, 220);
 }
 
+.darkInputSearch {
+  background: rgb(13, 37, 63);
+}
+
+.lightInputSearch {
+  background: #fff;
+}
+
 .darkColorSearch {
   color: rgb(13, 37, 63);
 }

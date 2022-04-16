@@ -27,11 +27,11 @@
 }
 
 .footerWhiteBackground {
-  background: rgb(13, 37, 63);
+  background: rgba(13, 37, 63, 0.95);
 }
 
 .footerBlackBackground {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.95);
 }
 
 .footerBlackColor {

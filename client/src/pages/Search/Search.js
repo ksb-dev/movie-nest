@@ -49,8 +49,8 @@ const Search = () => {
         <form
           className={
             toggleMode === 'white'
-              ? 'search-form darkSearch'
-              : 'search-form lightSearch'
+              ? 'search-form lightInputSearch'
+              : 'search-form darkInputSearch'
           }
           onSubmit={e => {
             e.preventDefault()
@@ -63,8 +63,8 @@ const Search = () => {
             type='text'
             className={
               toggleMode === 'white'
-                ? 'form-input lightColorSearch'
-                : 'form-input darkColorSearch'
+                ? 'form-input darkColorSearch'
+                : 'form-input lightColorSearch'
             }
             value={query}
             onChange={e => setQuery(e.target.value)}
