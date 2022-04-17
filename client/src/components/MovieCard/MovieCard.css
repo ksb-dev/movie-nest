@@ -6,7 +6,7 @@
 }
 
 .one-movie:hover {
-  box-shadow: 0px 0px 20px;
+  box-shadow: 0px 0px 20px gray;
   transition: box-shadow 0.3s ease;
 }
 
