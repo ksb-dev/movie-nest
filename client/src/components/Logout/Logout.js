@@ -16,7 +16,7 @@ const Logout = ({ log }) => {
   } = useGlobalContext()
 
   const hide = () => {
-    log.current.style.transform = 'translateX(100%)'
+    log.current.style.transform = 'translateX(110%)'
   }
 
   const logout = () => {
@@ -33,7 +33,7 @@ const Logout = ({ log }) => {
     setToken('')
     setWishlist([])
     setSearchTerm('')
-    log.current.style.transform = 'translateX(100%)'
+    log.current.style.transform = 'translateX(110%)'
     window.location.reload()
   }
 
