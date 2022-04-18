@@ -56,7 +56,8 @@ const Pagination = ({ data, pageLimit, dataLimit, handleClick }) => {
                 : ` ${number === 1 ? 'disabled' : 'prevNextLight'}`
             }
           >
-            <i className='fa-solid fa-circle-chevron-up fa-2x'></i>
+            <i class='fa-solid fa-circle-chevron-left fa-2x left'></i>
+            <i className='fa-solid fa-circle-chevron-up fa-2x up'></i>
           </button>
 
           {/* show page numbers */}
@@ -88,7 +89,8 @@ const Pagination = ({ data, pageLimit, dataLimit, handleClick }) => {
                 : ` ${number === pages ? 'prevNextLight' : 'prevNextLight'}`
             }
           >
-            <i className='fa-solid fa-circle-chevron-down fa-2x'></i>
+            <i class='fa-solid fa-circle-chevron-right fa-2x right'></i>
+            <i className='fa-solid fa-circle-chevron-down fa-2x down'></i>
           </button>
         </div>
       </div>

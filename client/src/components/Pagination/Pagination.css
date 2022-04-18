@@ -18,6 +18,11 @@
   border-bottom-right-radius: 0;
 }
 
+.pagination .inner .left,
+.pagination .inner .right {
+  display: none;
+}
+
 .paginationItem {
   border: none;
   height: 30px;
@@ -135,6 +140,16 @@
     box-shadow: none;
   }
 
+  .pagination .inner .left,
+  .pagination .inner .right {
+    display: block;
+  }
+
+  .pagination .inner .up,
+  .pagination .inner .down {
+    display: none;
+  }
+
   .paginationItem {
     height: 25px;
     width: 25px;
@@ -144,5 +159,9 @@
   .prevNextLight,
   .disabled {
     font-size: 0.75rem;
+  }
+
+  .disabled {
+    margin: 0 5px;
   }
 }

@@ -26,6 +26,15 @@
   transition: all 0.3s ease;
 }
 
+.footer .footer-filter {
+  display: flex;
+  align-items: center;
+}
+
+.footer .footer-filter i {
+  margin-right: 0.5rem;
+}
+
 .footerWhiteBackground {
   background: rgba(13, 37, 63, 0.95);
 }

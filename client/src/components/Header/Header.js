@@ -132,10 +132,19 @@ const Header = () => {
           <div className='mode-menu'>
             <div className='head-filter'>
               {window.location.pathname === '/' && (
-                <Filtered
-                  activeGenre={activeGenre}
-                  setActiveGenre={setActiveGenre}
-                />
+                <>
+                  <i
+                    class={
+                      toggleMode === 'white'
+                        ? 'fa-solid fa-filter headerBlackColor'
+                        : 'fa-solid fa-filter headerWhiteColor'
+                    }
+                  ></i>
+                  <Filtered
+                    activeGenre={activeGenre}
+                    setActiveGenre={setActiveGenre}
+                  />
+                </>
               )}
             </div>
 

@@ -42,7 +42,16 @@ const Footer = () => {
         Moviefy
       </h1>
       {window.location.pathname === '/' && (
-        <Filtered activeGenre={activeGenre} setActiveGenre={setActiveGenre} />
+        <div className='footer-filter'>
+          <i
+            class={
+              toggleMode === 'white'
+                ? 'fa-solid fa-filter footerBlackColor'
+                : 'fa-solid fa-filter footerWhiteColor'
+            }
+          ></i>
+          <Filtered activeGenre={activeGenre} setActiveGenre={setActiveGenre} />
+        </div>
       )}
     </div>
   )
