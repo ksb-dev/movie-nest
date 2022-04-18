@@ -287,11 +287,13 @@ Single Movie
 .black {
   background: rgb(13, 37, 63);
   background: #001124;
+  /*background: linear-gradient(to right, rgb(13, 37, 63), #001124);*/
 }
 
 .white {
   background: #fff;
   background: rgb(220, 220, 220);
+  /*background: linear-gradient(to right, #fff, rgb(220, 220, 220));*/
 }
 
 ::-webkit-scrollbar {

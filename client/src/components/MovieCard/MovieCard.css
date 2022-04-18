@@ -6,7 +6,7 @@
 }
 
 .one-movie:hover {
-  box-shadow: 0px 0px 20px gray;
+  box-shadow: 0px 0px 50px #01b4e4;
   transition: box-shadow 0.3s ease;
 }
 
@@ -149,11 +149,13 @@
 
 .movieInfoWhiteBg {
   background: rgb(13, 37, 63);
+  /*background: linear-gradient(to right, rgb(13, 37, 63), #001124);*/
 }
 
 .movieInfoBlackBg {
   background: rgb(220, 220, 220);
   background: #fff;
+  /*background: linear-gradient(to right, #fff, rgb(220, 220, 220));*/
 }
 
 .darkTitle {
